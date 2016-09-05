@@ -51,6 +51,25 @@ with a fast sim method}
 %----------------------------------------------
 
 \begin{frame}
+\frametitle{Layouts}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[width=\textwidth,height=3.8cm]{ExtBrl4}
+\end{column}
+\begin{column}{0.5\textwidth}
+\includegraphics[width=\textwidth,height=3.8cm]{IExtBrl4}
+\end{column}
+\end{columns}
+
+\begin{center}
+\includegraphics[width=0.5\textwidth,height=3.8cm]{InclBrl4}
+\end{center}
+
+\end{frame}
+
+%----------------------------------------------
+
+\begin{frame}
 \frametitle{The Fast Sim method - RoI definition}
 
 \begin{columns}[t]
@@ -91,13 +110,14 @@ with a fast sim method}
 \frametitle{Generated events}
 
 \begin{itemize}
-\item 50k events of $H \rightarrow ZZ^{*} \rightarrow 4\mu$ (signal) \tikzmark{topbrace}
+\item 50k events of $gg\rightarrow H \rightarrow ZZ^{*} \rightarrow 4\mu$ (signal) \tikzmark{topbrace}
 \item 16k events of $ZZ^{(*)} \rightarrow 4\mu$ (background) \tikzmark{bottombrace}
 \end{itemize}
 
 \setbeamercolor{local structure}{fg=dred} 
 \begin{itemize}
-\item only events with exactly four muons and photons with $p_{T, max}^{\gamma} < 1.5$ GeV
+\item $\langle\mu\rangle$ = 200, 13 TeV, Step-1 layouts @4.0
+\item only events with exactly four muons and $\gamma$ with $p_{T, max}^{\gamma} < 1.5$ GeV
 \end{itemize}
 %[\color{red}\scalebox{0.9}{\ball}]
 \begin{tikzpicture}[overlay, remember picture]
@@ -221,8 +241,8 @@ Scoping Document
 \end{column}
 \begin{column}{.5\textwidth}
 \centering
-\vskip1.0cm
-Our analysis (InclBrl4 layout)
+\vskip0.6cm
+Our analysis \\(InclBrl4 layout, no mass constraint)
 \vskip0.1cm
 \includegraphics<1>[width=\textwidth]{HZZ4mu/recoOnShellMass27}
 \includegraphics<2>[width=\textwidth]{HZZ4mu/recoOnShellMass32}
@@ -246,8 +266,8 @@ Scoping Document
 \end{column}
 \begin{column}{.5\textwidth}
 \centering
-\vskip1.2cm
-Our analysis (InclBrl4 layout)
+\vskip0.8cm
+Our analysis \\(InclBrl4 layout, no mass constraint)
 \includegraphics[width=\textwidth]{HZZ4mu/recoMass}
 \end{column}
 
@@ -257,7 +277,7 @@ Our analysis (InclBrl4 layout)
 %----------------------------------------------
 
 \begin{frame}
-\frametitle{Higgs $p_{T}$, $\eta$, $\phi$ resolutions}
+\frametitle{Higgs $p_{T}$, $\eta$, $\phi$ resolutions (InclBrl4 layout)}
 \begin{columns}
 \begin{column}{0.5\textwidth}
 \centering
@@ -302,25 +322,109 @@ Our analysis (InclBrl4 layout)
 %----------------------------------------------
 
 \begin{frame}
+\frametitle{Mass resolution - summary}
 \centering
-\huge \color{dred} \textbf{Backup slides}
+\includegraphics[width=\textwidth]{HZZ4mu/massResolutions}
+
+\onslide<2->{
+\begin{columns}
+\begin{column}{.7\textwidth}
+\includegraphics[width=\textwidth]{scopingResolution}
+\end{column}
+\begin{column}{.3\textwidth}
+\textbf{Scoping Document}: \\
+Better resolutions but Z mass constraint
+\end{column}
+\end{columns}}
+
 \end{frame}
+
+%----------------------------------------------
 
 \begin{frame}
-\frametitle{Layouts}
-\begin{columns}
-\begin{column}{0.5\textwidth}
-\includegraphics[width=\textwidth,height=3.8cm]{ExtBrl4}
-\end{column}
-\begin{column}{0.5\textwidth}
-\includegraphics[width=\textwidth,height=3.8cm]{IExtBrl4}
-\end{column}
-\end{columns}
+\frametitle{$p_T$, $\eta$, $\phi$ resolutions - summary}
+\centering
+\includegraphics[width=\textwidth]{HZZ4mu/ptResolutions}
+\end{frame}
 
+%----------------------------------------------
+
+\begin{frame}[t]
+\frametitle{Channel significance}
 \begin{center}
-\includegraphics[width=0.5\textwidth,height=3.8cm]{InclBrl4}
+\includegraphics[width=.5\textwidth]{SBInclBrl4}
 \end{center}
 
+\begin{itemize}
+\item Signal/background defined in [peak - 1.5$\sigma$, peak + 1.5$\sigma$]
+\item Significance = $\frac{S}{\sqrt{S + B}}$
+\item $\mu$ = $\frac{(\sigma \times BR)_{meas}}{(\sigma \times BR)_{SM}}$ $\rightarrow 
+\Delta\mu/\mu \simeq \frac{\sqrt{S + B}}{S}$ (stat. only)
+\end{itemize}
 \end{frame}
+
+%----------------------------------------------
+
+\begin{frame}
+\frametitle{Channel significance - summary}
+\centering
+\includegraphics[width=.9\textwidth, height=7.5cm]{significance}
+\end{frame}
+
+%----------------------------------------------
+\begin{frame}[t]
+\frametitle{Channel significance - Scoping}
+
+\includegraphics[width=.8\textwidth]{significanceInclBrl4}
+
+\bigskip
+
+\includegraphics[width=.6\textwidth]{scopingSignificance}
+
+\onslide<2->{
+Differences:\\
+\begin{itemize}
+\item Scoping analysis is \textbf{inclusive} (factor 1.16 in $\sigma$)
+\item Scoping analysis at 14 TeV, ours at 13 TeV (factor 1.13 in $\sigma$)
+\item Generation selection of the final state radiation (factor 1.25)
+\item Z mass constraint
+\end{itemize}}
+\end{frame}
+
+%----------------------------------------------
+
+\begin{frame}
+\frametitle{Conclusions}
+\begin{itemize}
+\item<1-> We extended Soshi's fast simulation technique to physics samples
+\item<2-> Step-1 layouts are robust against pile-up
+\item<3-> We measured the $H \rightarrow 4\mu$ channel with a S/B of \textbf{at least} 7 and
+a $\Delta\mu/\mu \sim$ 2.5\%, without considering the luminosity uncertainty \mbox{($\sim$ 3\%)}
+\item<4-> The inclined layouts show slightly better performances, but the reconstruction
+algorithm in the ExtBrl4 layout is not 
+optimized in the forward region at Step-1 (long clusters)
+\end{itemize}
+
+\onslide<5->{
+So:\\
+\setbeamercolor{local structure}{fg=dred} 
+\begin{itemize}
+\item<5-> Early to draw conclusions but still a useful exercise that shows that the Step-1 layouts are
+robust against pile-up also and respect the requirements for the $H \rightarrow 4\mu$ channel
+\item<6-> The $\eta$ coverage extension to 3.2 provides measurements with better 
+statistics, slight improvement with 4.0
+
+\end{itemize}}
+\end{frame}
+
+%----------------------------------------------
+
+
+%\begin{frame}
+%\centering
+%\huge \color{dred} \textbf{Backup slides}
+%\end{frame}
+
+
 
 \end{document}
