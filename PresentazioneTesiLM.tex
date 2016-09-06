@@ -34,9 +34,14 @@ Universit\`a di Pisa}
 \setbeameroption{show notes}
 \setbeamertemplate{navigation symbols}{}
 
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{calc}
 
 \usepackage{amsmath}% mathtools includes this so this is optional
 \usepackage{mathtools}
+
+\definecolor{dred}{RGB}{200, 0, 0}
 
 \begin{document}
 
@@ -117,10 +122,10 @@ $$
 \medskip
 con:\\
 \begin{itemize}
-\item $\mathcal{L}$: luminosit\`a istantanea, termine geometrico che descrive la geometria del fascio 
-\item $\sigma$: sezione d'urto del processo considerato
+\item $\mathcal{L}$: \textbf{luminosit\`a istantanea}, termine geometrico che descrive la geometria del fascio 
+\item $\sigma$: \textbf{sezione d'urto} del processo considerato
+\item $\int\mathcal{L}dt$: \textbf{luminosit\`a integrata} nel tempo di presa dati
 \end{itemize}
-
 \bigskip 
 
 \onslide<2->{
@@ -140,7 +145,114 @@ $$
 
 %-----------------------------------------
 
+\begin{frame}[t]
+\frametitle{High Luminosity LHC (HL-LHC)}
+\note<1>{
+Sono previsti una serie di upgrade ad LHC, in particolare quello del 2026 che porterà ad HL-LHC, in cui la luminosit\`a 
+passer\`a dal valore attuale di $10^{34}$ a 7.5 x $10^{34}$ e prevede di durare 10 anni, raccogliendo 3000 fb$^{-1}$ di dati a 14 TeV.
+}
+
+LHC prevede una serie di upgrade per aumentare la luminosit\`a istantanea \\
+\ \ \ \ \ \ \ \ \ \ \  $\rightarrow$ \textbf{High-Luminosity LHC} (HL-LHC)
+\vskip0.2cm
+\includegraphics[width=\textwidth]{HLLHC_Plan}
+
+\begin{columns}
+\begin{column}{0.7\textwidth}
+\end{column}
+\begin{column}{0.3\textwidth}
+\begin{tikzpicture}[scale=1]
+\draw [decorate,decoration={brace,amplitude=8pt},xshift=-50pt,yshift=0pt, dred, thick]
+(3.5,0) -- (0,0); %node [midway,xshift=-0cm]{};
+\end{tikzpicture}
+\end{column}
+\end{columns}
+\medskip
+\begin{itemize}
+\item HL-LHC prevede di raccogliere una luminosit\`a integrata di 3000 fb$^{-1}$
+\item Massima luminosit\`a istantanea: 7.5 $\times 10^{34}$ cm$^{-2}$s$^{-1}$
+\item L'energia del centro di massa sar\`a quella di progetto: 14 TeV
+\end{itemize}
+
+\end{frame}
+
+%-----------------------------------------
+
+\begin{frame}[t]
+\frametitle{Pile-up}
+Il numero di collisioni per ``bunch-crossing'' ad HL-LHC aumenta
+a causa dell'aumento della luminosit\`a e della sezione d'urto inelastica.\\
+
+\begin{itemize}
+\item Le collisioni che avvengono \textit{nello stesso bunch} di quella di interesse
+rappresentano il cosiddetto \textbf{in-time pile-up}
+\item valore nominale ad HL-LHC: 140
+\item valore di picco ad HL-LHC: 200
+\end{itemize}
+
+\only<1>{\includegraphics[width=\textwidth]{collisions20}}
+\only<2>{\includegraphics[width=\textwidth, height=4cm]{collisions140}}
+
+
+
+\end{frame}
+
+%-----------------------------------------
+
 \begin{frame}
+\setbeamercolor{normal text}{fg=gray!50!white,bg=}
+\setbeamercolor{alerted text}{fg=black,bg=}
+\usebeamercolor{normal text}
+
+\frametitle{Il rivelatore di ATLAS}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\centering
+\includegraphics<+->[width=\textwidth]{atlas}
+\end{column}
+\begin{column}{0.4\textwidth}
+	\begin{itemize}
+	\item \alert<+>{\small \textbf{Solenoide e toroidi:} producono un campo magnetico che fa curvare
+	le particelle cariche}
+	\item \alert<+>{\small \textbf{Rivelatore interno:} ricostruisce i vertici e misura l'impulso delle particelle cariche}
+	\item \alert<+>{\small \textbf{Calorimetri:} misurano l'energia di particelle cariche e neutre}
+	\item \alert<+>{\small \textbf{Camere dei muoni:} misurano l'impulso dei muoni}
+	\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+%-----------------------------------------
+
+\begin{frame}
+\frametitle{Il Rivelatore Interno di ATLAS}
+\centering
+
+\begin{center}
+        \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.6\textwidth,angle=-90]{NewID}};
+            \node[align=center,red] at ($(image.south east) + (2,1.4)$) {\vbox{\small
+            \begin{itemize}
+		\item $\eta = -\log{\tan{\frac{\theta}{2}}}$
+		\item Copertura angolare: $|\eta| < 2.5$
+		\item 4 strati di Pixel
+		\item 4 strati di microstrip (SCT) 
+		\item Transition Radiation Tracker (TRT)
+            \end{itemize}}};
+        \end{tikzpicture}
+    \end{center}
+
+\end{frame}
+
+%-----------------------------------------
+
+\begin{frame}
+\frametitle{Upgrade per HL-LHC}
+L'attuale rivelatore interno \`e inadatto alla fase di alta luminosit\`a:
+
+\begin{itemize}
+\item<+-> 
+\end{itemize}
 
 \end{frame}
 
