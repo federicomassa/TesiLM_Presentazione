@@ -31,7 +31,8 @@ $H \rightarrow ZZ^{*} \rightarrow 4\mu$ channel}
 Universit\`a di Pisa}
 \date{23 Settembre 2016}
 
-\setbeameroption{show notes}
+%\setbeameroption{show notes}
+\setbeameroption{hide notes}
 \setbeamertemplate{navigation symbols}{}
 
 \usepackage{tikz}
@@ -100,6 +101,54 @@ Le collisioni possono essere:
 \end{frame}
 
 %-----------------------------------------
+
+\begin{frame}
+\setbeamercolor{normal text}{fg=gray!50!white,bg=}
+\setbeamercolor{alerted text}{fg=black,bg=}
+\usebeamercolor{normal text}
+
+\frametitle{Il rivelatore di ATLAS}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\centering
+\includegraphics<+->[width=\textwidth]{atlas}
+\end{column}
+\begin{column}{0.4\textwidth}
+	\begin{itemize}
+	\item \alert<+>{\small \textbf{Solenoide e toroidi:} producono un campo magnetico che fa curvare
+	le particelle cariche}
+	\item \alert<+>{\small \textbf{Rivelatore interno:} ricostruisce i vertici e misura l'impulso delle particelle cariche}
+	\item \alert<+>{\small \textbf{Calorimetri:} misurano l'energia di particelle cariche e neutre}
+	\item \alert<+>{\small \textbf{Camere dei muoni:} misurano l'impulso dei muoni}
+	\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+%-----------------------------------------
+
+\begin{frame}
+\frametitle{Il Rivelatore Interno di ATLAS}
+\centering
+
+\begin{center}
+        \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.6\textwidth,angle=-90]{NewID}};
+            \node[align=center,red] at ($(image.south east) + (2,1.4)$) {\vbox{\small
+            \begin{itemize}
+		\item $\eta = -\log{\tan{\frac{\theta}{2}}}$
+		\item Copertura angolare: $|\eta| < 2.5$
+		\item 4 strati di Pixel
+		\item 4 strati di microstrip (SCT) 
+		\item Transition Radiation Tracker (TRT)
+            \end{itemize}}};
+        \end{tikzpicture}
+    \end{center}
+
+\end{frame}
+
+%-----------------------------------------
+
 \begin{frame}[t]
 \frametitle{Numero di interazioni}
 
@@ -199,62 +248,65 @@ rappresentano il cosiddetto \textbf{in-time pile-up}
 
 %-----------------------------------------
 
-\begin{frame}
-\setbeamercolor{normal text}{fg=gray!50!white,bg=}
-\setbeamercolor{alerted text}{fg=black,bg=}
-\usebeamercolor{normal text}
 
-\frametitle{Il rivelatore di ATLAS}
-\begin{columns}
-\begin{column}{0.6\textwidth}
-\centering
-\includegraphics<+->[width=\textwidth]{atlas}
-\end{column}
-\begin{column}{0.4\textwidth}
-	\begin{itemize}
-	\item \alert<+>{\small \textbf{Solenoide e toroidi:} producono un campo magnetico che fa curvare
-	le particelle cariche}
-	\item \alert<+>{\small \textbf{Rivelatore interno:} ricostruisce i vertici e misura l'impulso delle particelle cariche}
-	\item \alert<+>{\small \textbf{Calorimetri:} misurano l'energia di particelle cariche e neutre}
-	\item \alert<+>{\small \textbf{Camere dei muoni:} misurano l'impulso dei muoni}
-	\end{itemize}
-\end{column}
-\end{columns}
-\end{frame}
-
-%-----------------------------------------
-
-\begin{frame}
-\frametitle{Il Rivelatore Interno di ATLAS}
-\centering
-
-\begin{center}
-        \begin{tikzpicture}
-            \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.6\textwidth,angle=-90]{NewID}};
-            \node[align=center,red] at ($(image.south east) + (2,1.4)$) {\vbox{\small
-            \begin{itemize}
-		\item $\eta = -\log{\tan{\frac{\theta}{2}}}$
-		\item Copertura angolare: $|\eta| < 2.5$
-		\item 4 strati di Pixel
-		\item 4 strati di microstrip (SCT) 
-		\item Transition Radiation Tracker (TRT)
-            \end{itemize}}};
-        \end{tikzpicture}
-    \end{center}
-
-\end{frame}
 
 %-----------------------------------------
 
 \begin{frame}
 \frametitle{Upgrade per HL-LHC}
 L'attuale rivelatore interno \`e inadatto alla fase di alta luminosit\`a:
-
+\pause
 \begin{itemize}
-\item<+-> 
+\item<+-> I rivelatori a pixel e SCT non sono disegnati per sopportare l'alto
+flusso di radiazione di HL-LHC
+\item<+-> L'elettronica di read-out \`e disegnata per un numero massimo di eventi
+		di pile-up di 50 $\rightarrow$ inefficienze ad HL-LHC
+\item<+-> La risoluzione spaziale dell'SCT non permette di risolvere tracce
+		in ambienti altamente densi di particelle
+\item<+-> Il TRT raggiunger\`a il 100\% di occupancy (frazione di canali elettronici attivi)
 \end{itemize}
 
+\bigskip
+
+\onslide<+->{\Large{\color{dred}\textbf{\ \ \ $\rightarrow$ Necessario upgrade: Inner Tracker (ITk)}}}
+
 \end{frame}
+
+%-----------------------------------------
+
+\begin{frame}
+\frametitle{Layout di ITk: Step-1}
+
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+	\begin{itemize}
+	\item Solo rivelatori al silicio \\ (no TRT)
+	\item Copertura angolare estesa: $|\eta| < 2.5 \rightarrow 4.0$
+	\item 5 strati di pixel + 4 SCT
+	\item Pixel a maggiore risoluzione
+	\end{itemize}
+	\ \ \ \
+\end{column}
+\begin{column}{0.5\textwidth}
+\includegraphics[width=\textwidth,height=3.8cm]{ExtBrl4}
+\end{column}
+\end{columns}
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\includegraphics[width=\textwidth,height=3.8cm]{IExtBrl4}
+\end{column}
+\begin{column}{0.5\textwidth}
+\includegraphics[width=\textwidth,height=3.8cm]{InclBrl4}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+%-----------------------------------------
+
+
 
 %-----------------------------------------
 
