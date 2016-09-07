@@ -110,7 +110,6 @@ with a fast sim method}
 \only<3>{\includegraphics[width=\textwidth]{PhysicsGenerationFlow_3}}
 \only<4>{\includegraphics[width=\textwidth]{PhysicsGenerationFlow_4}}
 
-\transdissolve<2-4>
 \end{frame}
 
 %----------------------------------------------
@@ -214,14 +213,14 @@ must lie in the region $|\eta| <$ 2.7;
 \begin{columns}
 \begin{column}{.6\textwidth}
 \centering
-Scoping Document: Efficiency (InclBrl4)
+Scoping Document: Efficiency
 \includegraphics[width=\textwidth]{scopingAcceptance}
 \end{column}
 \begin{column}{.4\textwidth}
 \resizebox{\textwidth}{!}{
 \begin{tabular}{|c|c|c|}
 \hline
- & \textbf{Us} & \textbf{Scoping} \\ \hline
+ & \textbf{InclBrl4} & \textbf{Scoping} \\ \hline
 \textbf{Geom. acc.} & 94.08\% & 94\% \\ \hline
 \textbf{Total eff.} & 56.6\% & 57\% \\ \hline
 \end{tabular}}
@@ -333,7 +332,13 @@ Our analysis \\(InclBrl4 layout, no mass constraint)
 \begin{frame}
 \frametitle{Mass resolution - summary}
 \centering
-\includegraphics[width=\textwidth]{HZZ4mu/massResolutions}
+
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=\textwidth]{HZZ4mu/massResolutions}};
+    \draw<2->[red,thick] (0.1,2.31) rectangle (12,2.67);
+    \draw<2->[red,thick] (0.1,1.17) rectangle (12,1.57);
+    \draw<2->[red,thick] (0.1,0.05) rectangle (12,0.42);
+\end{tikzpicture}
 
 \onslide<2->{
 \begin{columns}
