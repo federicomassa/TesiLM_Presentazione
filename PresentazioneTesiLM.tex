@@ -37,11 +37,12 @@ Universit\`a di Pisa}
 
 \usepackage{tikz}
 \usetikzlibrary{decorations.pathreplacing}
-\usetikzlibrary{calc}
+\usetikzlibrary{positioning, calc}
 
 \usepackage{amsmath}% mathtools includes this so this is optional
 \usepackage{mathtools}
-
+\usepackage[export]{adjustbox}
+\usepackage{tcolorbox}
 \definecolor{dred}{RGB}{200, 0, 0}
 
 \begin{document}
@@ -248,12 +249,8 @@ rappresentano il cosiddetto \textbf{in-time pile-up}
 
 %-----------------------------------------
 
-
-
-%-----------------------------------------
-
 \begin{frame}
-\frametitle{Upgrade per HL-LHC}
+\frametitle{Upgrade del rivelatore interno}
 L'attuale rivelatore interno \`e inadatto alla fase di alta luminosit\`a:
 \pause
 \begin{itemize}
@@ -305,9 +302,131 @@ flusso di radiazione di HL-LHC
 \end{frame}
 
 %-----------------------------------------
+\begin{frame}[t]
+\frametitle{Inclined sensors}
+\begin{center}
+InclBrl4: Pixel Layout
+\begin{tikzpicture}
 
+\onslide<1->{
+    \node[anchor=south west,inner sep=0] (fig) at (0,0) {\includegraphics[width=.8\textwidth]{InDetPixelLayoutRZ}};
+    }
+\onslide<2->{
+    \path let       \p1 = ($(fig.north west)$),
+			\p2 = ($(fig.south east)$),
+			\n{figheight} = {veclen(\y1,\y2)},
+			\n{figwidth} = {veclen(\x1,\x2)},
+			\p3 = ($(\p1) - (0,\n{figheight}) + (.22*\n{figwidth},.25*\n{figheight})$)  in
+	node (rect) at (\p3) [draw,black,thick,minimum width=.05*\n{figwidth},minimum height=.18*\n{figheight}] {};
+	%\draw<2->[red] (2.45,1) rectangle (3,2);    
+    \node[anchor=south west,inner sep=0] (zoom) at (4,-1.9) {\includegraphics[frame,width=.2\textwidth]{InclZoom}};
 
+\path let \p4 = ($(zoom.south east)$),
+		\p5 = ($(fig.south east)$),
+		\p6 = ($(zoom.south west)$),
+		\p7 = ($(zoom.north west)$),
+		\n{zoomheight} = {veclen(\y6, \y7)}
+			in
+		
+coordinate (zoomEdge) at (\x6, \y6 + \n{zoomheight}*0.75);
+%coordinate (zoomEdge) at (\x6, \y6);
 
+    \draw [black,thick] (rect.south east) -- ($(zoomEdge)$);
+    \draw [black,thick] (rect.south west) -- ($(zoom.south west)$);
+    \draw [black,thick] (rect.north west) -- ($(zoom.north west)$);
+    \draw [black,thick] (rect.north east) -- ($(zoom.north east)$);
+    }
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+\section{Tecnica di Fast Simulation}
+%-----------------------------------------
+\begin{frame}
+\frametitle{Simulazione standard di ATLAS}
+\begin{onlyenv}<1-10>
+\includegraphics<1>[width=0.9\textwidth]{SimulationFlow8}
+\includegraphics<2>[width=0.9\textwidth]{SimulationFlow7}
+\includegraphics<3>[width=0.9\textwidth]{SimulationFlow6}
+\includegraphics<4>[width=0.9\textwidth]{SimulationFlow5}
+\includegraphics<5>[width=0.9\textwidth]{SimulationFlow4}
+\includegraphics<6>[width=0.9\textwidth]{SimulationFlow3}
+\includegraphics<7>[width=0.9\textwidth]{SimulationFlow2}
+\includegraphics<8->[width=0.9\textwidth]{SimulationFlow}
+\pause
+\pause
+\pause
+\pause
+\pause
+\pause
+\pause
+\pause
+\begin{tcolorbox}{}
+\onslide<+->{\small La simulazione delle risposta del tracciatore  ad HL-LHC impiega \\
+ $\sim$ \textbf{1 ora/evento}} 
+\onslide<+->{\textbf{\color{dred} $\rightarrow$ Tecniche di simulazione veloce}}
+\end{tcolorbox}
+\end{onlyenv}
+
+\end{frame}
+
+%-----------------------------------------
+\begin{frame}
+\frametitle{La tecnica di simulazione veloce}
+
+\begin{columns}
+	\begin{column}[b]{.38\textwidth}
+	\begin{tcolorbox}{}
+	\textbf{\color{dred} Idea chiave:}\\
+	 \small Simulare solo le \\ 
+	 \mbox{particelle all'interno di} \mbox{regioni di interesse (\textit{RoI})}
+	\end{tcolorbox}		
+	\vskip1.5cm
+	
+		\small
+		{\color{dred} Particella di ``hard-scattering''} \\
+		\vskip0.2cm
+		{\color{cyan} Particelle di pile-up in RoI} \\
+		\vskip0.2cm
+		{\color{gray} Particelle di pile-up escluse} \\
+		\vskip0.2cm
+		\framebox{Ampiezza del cono: $\Delta$R = 0.1}
+	
+	\end{column}
+	\begin{column}[t]{.62\textwidth}
+		\includegraphics[width=\textwidth]{cone}
+	\end{column}
+\end{columns}
+	
+\end{frame}
+
+\section{Studio di singolo pione}
+%-----------------------------------------
+
+\begin{frame}
+\begin{center}
+\huge{\textbf{\color{dred} Studio di singola particella: $\pi^{\pm}$}}
+\end{center}
+\end{frame}
+
+%-----------------------------------------
+
+\begin{frame}
+\frametitle{Generazione dell'evento}
+\end{frame}
+
+%-----------------------------------------
+
+\begin{frame}
+\frametitle{Cose da aggiungere}
+\begin{itemize}
+\item slide con disegno sensore pixel e soprattutto strip, per far vedere che \`e doppia
+\item far vedere meccanismo di generazione long clusters vs doppio layer negli inclined
+\item tabella tempi fast vs full sim
+\item Limitazioni della fast sim
+\end{itemize}
+\end{frame}
 %-----------------------------------------
 
 \end{document}
