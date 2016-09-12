@@ -38,6 +38,7 @@ Universit\`a di Pisa}
 \usepackage{tikz}
 \usetikzlibrary{decorations.pathreplacing}
 \usetikzlibrary{positioning, calc}
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
 
 \usepackage{amsmath}% mathtools includes this so this is optional
 \usepackage{mathtools}
@@ -278,10 +279,12 @@ flusso di radiazione di HL-LHC
 \begin{columns}
 \begin{column}{0.5\textwidth}
 	\begin{itemize}
+	\small
 	\item Solo rivelatori al silicio \\ (no TRT)
 	\item Copertura angolare estesa: $|\eta| < 2.5 \rightarrow 4.0$
 	\item 5 strati di pixel + 4 SCT
 	\item Pixel a maggiore risoluzione
+	\item Strip pi\`u corte
 	\end{itemize}
 	\ \ \ \
 \end{column}
@@ -341,7 +344,7 @@ coordinate (zoomEdge) at (\x6, \y6 + \n{zoomheight}*0.75);
 
 \end{frame}
 
-\section{Tecnica di Fast Simulation}
+\section{Simulazione}
 %-----------------------------------------
 \begin{frame}
 \frametitle{Simulazione standard di ATLAS}
@@ -363,7 +366,7 @@ coordinate (zoomEdge) at (\x6, \y6 + \n{zoomheight}*0.75);
 \pause
 \pause
 \begin{tcolorbox}{}
-\onslide<+->{\small La simulazione delle risposta del tracciatore  ad HL-LHC impiega \\
+\onslide<+->{\small \textbf{Problema:} la simulazione delle risposta del rivelatore interno ad HL-LHC impiega \\
  $\sim$ \textbf{1 ora/evento}} 
 \onslide<+->{\textbf{\color{dred} $\rightarrow$ Tecniche di simulazione veloce}}
 \end{tcolorbox}
@@ -372,18 +375,39 @@ coordinate (zoomEdge) at (\x6, \y6 + \n{zoomheight}*0.75);
 \end{frame}
 
 %-----------------------------------------
-\begin{frame}
-\frametitle{La tecnica di simulazione veloce}
+\begin{frame}[t]
+\frametitle{Simulazione veloce del rivelatore interno}
 
 \begin{columns}
-	\begin{column}[b]{.38\textwidth}
+	\begin{column}{.45\textwidth}
 	\begin{tcolorbox}{}
-	\textbf{\color{dred} Idea chiave:}\\
+	\textbf{\color{dred} Idee chiave:}\\
+	\begin{itemize}
+	\item[\color{black}-]
 	 \small Simulare solo le \\ 
 	 \mbox{particelle all'interno di} \mbox{regioni di interesse (\textit{RoI})}
+	 attorno alle particelle di ``hard-scattering''
+	 \item[\color{black}-] Simulare solo rivelatore interno
+	 \end{itemize}
 	\end{tcolorbox}		
-	\vskip1.5cm
 	
+	\end{column}
+	\begin{column}{.55\textwidth}
+		\centering
+	%	\vskip-1.4cm
+		\includegraphics[width=.8\textwidth]{cone}
+	\end{column}
+\end{columns}
+
+\begin{columns}
+\begin{column}{.45\textwidth}
+		\begin{block}{}
+		Ampiezza del cono:\\
+		$\Delta$R = $\sqrt{\Delta\eta^{2} + \Delta\phi^{2}}$ = 0.1
+		\end{block}
+\end{column}
+\begin{column}{.55\textwidth}
+		\begin{center}
 		\small
 		{\color{dred} Particella di ``hard-scattering''} \\
 		\vskip0.2cm
@@ -391,12 +415,8 @@ coordinate (zoomEdge) at (\x6, \y6 + \n{zoomheight}*0.75);
 		\vskip0.2cm
 		{\color{gray} Particelle di pile-up escluse} \\
 		\vskip0.2cm
-		\framebox{Ampiezza del cono: $\Delta$R = 0.1}
-	
-	\end{column}
-	\begin{column}[t]{.62\textwidth}
-		\includegraphics[width=\textwidth]{cone}
-	\end{column}
+		\end{center}
+\end{column}
 \end{columns}
 	
 \end{frame}
@@ -414,10 +434,257 @@ coordinate (zoomEdge) at (\x6, \y6 + \n{zoomheight}*0.75);
 
 \begin{frame}
 \frametitle{Generazione dell'evento}
+
+Generazione di 45'000 eventi con un singolo $\pi^{\pm}$ (``particle-gun'') con:
+{\setbeamercolor{local structure}{fg=dred}
+\begin{itemize}
+\item<1-> componente trasversa dell'impulso ($p_{T}$) fissata: 5, 15, 50, 100 GeV
+\item<1-> distribuzione di $\eta$ piatta [-5, 5] (accettanza [-4, 4])
+\item<1-> distribuzione di $\phi$ piatta [-$\pi$, $\pi$]
+\end{itemize}}
+\bigskip
+\onslide<2->{
+Per ogni evento, sovrapposizione del pile-up:
+\begin{itemize}
+\item Generato con Pythia8
+\item $\mu$ = Poisson($\langle\mu\rangle$), $\langle\mu\rangle$ = 0, 50, 200
+\item Ogni particella di pile-up viene salvata nel file di output solo se 
+la sua distanza $\Delta$R dalla particella di hard-scattering \`e $<$ 0.1
+\end{itemize}}
+\bigskip
+\onslide<3->{
+\framebox{Layout simulati: ExtBrl4, IExtBrl4, InclBrl4}
+}
+
 \end{frame}
 
 %-----------------------------------------
 
+\begin{frame}
+\frametitle{Cluster}
+\setbeamercolor{local structure}{fg=black}
+\begin{itemize}
+\item[\color{black}--] Un parametro di qualit\`a delle tracce ricostruite \`e il \textbf{numero 
+di cluster} utilizzati nel fit della traccia
+\end{itemize}
+
+\begin{columns}
+\begin{column}{0.09\textwidth}
+\end{column}
+\begin{column}{0.41\textwidth}
+\includegraphics[width=\textwidth]{Tracking/nPixHits_abseta2}
+\end{column}
+\begin{column}{0.41\textwidth}
+\includegraphics[width=\textwidth]{Tracking/nSCTHits_abseta2}
+\end{column}
+\begin{column}{0.09\textwidth}
+\end{column}
+\end{columns}
+\vskip-0.1cm
+
+\begin{columns}
+\begin{column}{0.09\textwidth}
+\end{column}
+\begin{column}{0.41\textwidth}
+\includegraphics[width=\textwidth]{Tracking/nSiHits_abseta2}
+\end{column}
+\begin{column}{0.41\textwidth}
+\begin{itemize}
+\item \small \mbox{ExtBrl4 usa meno cluster.} \\
+Diverso approccio nella ricostruzione nella regione ad alto $\eta$
+\end{itemize}
+\end{column}
+\begin{column}{0.09\textwidth}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+%-----------------------------------------
+
+\begin{frame}
+\frametitle{Ricostruzione dei parametri di traccia}
+\begin{itemize}
+\item[\color{black}--] Parametri di traccia: \textbf{\color{dred}q/\boldmath$p_{T}$}, {\color{dred}\boldmath$\eta$}, {\color{dred}\boldmath$\phi$} (angolo azimuthale), {\color{dred}\boldmath$d_{0}$}
+(parametro di impatto trasversale), {\color{dred}\boldmath$z_{0}$} (parametro di impatto longitudinale)
+\item[\color{black}--] Per ogni parametro, fit gaussiano della distribuzione di $x_{traccia} - x_{truth}$ in diversi intervalli di $\eta$
+	\begin{itemize}
+	\item \textbf{Risoluzione:} $\sigma$ estratta dal fit
+	%\item \textbf{Bias:} media estratta dal fit
+	\end{itemize}
+\end{itemize}
+
+\begin{columns}
+\begin{column}{.5\textwidth}
+\includegraphics[width=\textwidth]{Tracking/Mixed/pi15pu200_sigQPt_abseta}
+\end{column}
+\begin{column}{.5\textwidth}
+\includegraphics[width=\textwidth]{Tracking/Mixed/pi15pu200_sigZ0_abseta}
+\end{column}
+\end{columns}
+\end{frame}
+
+%-----------------------------------------
+\begin{frame}
+\frametitle{Tracce ``fake''}
+Definizione operativa basata sulla distribuzione di $\Delta R_{traccia - truth}$:
+\centering
+\includegraphics[width=.7\textwidth]{Tracking/pionMatchingDR2}
+
+\begin{itemize}
+\item [\color{black}--] Valore ``critico'' di $\Delta R$ dipende dal $p_{T}$
+\item[\color{black}--] \textbf{Fake probability:} P(traccia fake $\vert$ traccia ricostruita) = (0.5 $\div$ 4) \%
+\end{itemize}
+\end{frame}
+
+%-----------------------------------------
+
+\begin{frame}[t]
+\frametitle{Efficienza di ricostruzione}
+\begin{block}{\color{dred}Definizione}
+$\epsilon\ (\eta \in\ $bin$_{i}) = $ P(traccia ricostruita, non fake $\vert$ truth $\eta \in$ bin$_{i}$)
+\end{block}
+\bigskip
+
+\begin{columns}
+\begin{column}{.5\textwidth}
+\centering
+\ \ \ \ $\langle\mu\rangle$ = 200, confronto layout
+\includegraphics[width=\textwidth]{Tracking/Mixed/pi15pu200_eff_abseta}
+\end{column}
+\begin{column}{.5\textwidth}
+\centering
+\ \ \ \ InclBrl4 layout, confronto pile-up
+\includegraphics[width=\textwidth]{Tracking/InclBrl4/pi15_eff_abseta}
+\end{column}
+\end{columns}
+\medskip
+Efficienza media dipendente dal $p_{T}$: (90 $\div$ 95)\ \%
+\end{frame}
+
+%-----------------------------------------
+\section{}
+\begin{frame}
+\begin{center}
+\huge{\textbf{\color{dred} Studio del canale H \boldmath$\rightarrow$ ZZ$^{*} \rightarrow 4\mu$}}
+\end{center}
+\end{frame}
+
+\section{Studio del bosone di Higgs in 4 muoni}
+%-----------------------------------------
+
+\begin{frame}[t]
+\frametitle{Metodo di simulazione veloce}
+
+\only<1>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT}}
+\only<2>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT2}}
+\only<3>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT3}}
+\only<4>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT4}}
+
+\end{frame}
+
+%-----------------------------------------
+
+\begin{frame}[t]
+\frametitle{Generazione dell'evento}
+
+\begin{itemize}
+\item 50'000 eventi di $gg\rightarrow H \rightarrow ZZ^{*} \rightarrow 4\mu$ (segnale) \tikzmark{topbrace}
+\item 16'000 eventi di $ZZ^{(*)} \rightarrow 4\mu$ (fondo) \tikzmark{bottombrace}
+\end{itemize}
+
+\setbeamercolor{local structure}{fg=dred} 
+\begin{itemize}
+\item $\langle\mu\rangle$ = 200, 13 TeV, ExtBrl4, IExtBrl4, InclBrl4 layouts
+\item Eventi contenti 4 muoni + fotoni di final-state-radiation con $p_{T, max}^{\gamma} < 1.5$ GeV
+\end{itemize}
+%[\color{red}\scalebox{0.9}{\ball}]
+\begin{tikzpicture}[overlay, remember picture]
+\draw [decoration={brace,amplitude=0.5em},decorate,ultra thick,black]
+let \p1=(topbrace), \p2=(bottombrace) in
+({max(\x1,\x2)}, {\y1+0.8em}) -- node[right=0.6em] {POWHEG} ({max(\x1,\x2)}, {\y2});
+\end{tikzpicture}
+%
+
+\begin{columns}
+\begin{column}{.5\textwidth}
+\centering
+Massa invariante di $4\mu$ (fondo)
+\includegraphics[width=\textwidth]{ZZ4mu/gen4muMass4}
+\end{column}
+\begin{column}{.5\textwidth}
+\centering
+$p_{T}$ dei fotoni\par
+\includegraphics[width=\textwidth]{HZZ4mu/photonPt4}
+\end{column}
+\end{columns}
+\end{frame}
+
+%-----------------------------------------
+
+\begin{frame}[t]
+\frametitle{Distribuzione di massa dei bosoni Z}
+
+\begin{itemize}
+\item[\color{black}--] On-shell: Z con massa pi\`u vicina a quella di riposo
+\end{itemize}
+\bigskip
+\begin{columns}
+\begin{column}{.5\textwidth}
+\centering
+$H \rightarrow ZZ^* \rightarrow 4\mu$
+\includegraphics[width=\textwidth]{HZZ4mu/genZMass}
+\end{column}
+\begin{column}{.5\textwidth}
+\centering
+$ZZ^{(*)} \rightarrow 4\mu$\par
+\includegraphics[width=\textwidth]{ZZ4mu/genZMass}
+\end{column}
+\end{columns}
+
+\begin{columns}
+\begin{column}{.6\textwidth}
+\end{column}
+\begin{column}{.4\textwidth}
+Picco {\color{dred} off-shell} a $\sim$ 90 GeV: componente ZZ del fondo
+\end{column}
+\end{columns}
+
+\end{frame}
+
+%-----------------------------------------
+
+\begin{frame}[t]
+\frametitle{Selezione dell'analisi}
+
+La selezione viene applicata sequenzialmente:
+\begin{itemize}
+\item<1-> l'evento deve contenere almeno 4 tracce;
+\item<2-> ogni traccia deve essere formata da almeno 10 cluster;
+\item<3-> ogni traccia deve avere $p_{T} >$ 6 GeV;
+\item<4-> la distanza tra lo $z_{0}$ della traccia e il vertice primario (truth) deve essere $< 5\sigma_{z}$;
+\end{itemize}
+\medskip
+\pause
+\pause
+\pause
+\pause
+\`E stato verificato che a questo punto tutti gli eventi hanno non pi\`u di 4 tracce $\rightarrow$ tagli topologici:
+\begin{itemize}
+\item<6-> le tracce devono essere isolate: $\sum_{\Delta R < 0.1} (p_{T}) / p_{T, candidate} <$ 1;
+\item<7-> ci devono essere due paia di tracce con carica opposta;
+\item<8-> Il $p_{T}$ ordinato delle tracce deve essere ($>$ 20, $>$ 15, $>$10, $>$ 6) GeV;
+\item<9-> almeno uno dei candidati off-shell
+deve avere $|\eta| <$ 2.7;
+\item<10-> la massa del paio on-shell deve stare nell'intervallo [50,106] GeV;
+\item<11-> la massa del paio off-shell deve stare nell'intervallo [12,115] GeV;
+\end{itemize}
+
+\end{frame}
+
+%----------------------------------------------
+
+\section{DA AGGIUNGERE}
 \begin{frame}
 \frametitle{Cose da aggiungere}
 \begin{itemize}
@@ -425,8 +692,37 @@ coordinate (zoomEdge) at (\x6, \y6 + \n{zoomheight}*0.75);
 \item far vedere meccanismo di generazione long clusters vs doppio layer negli inclined
 \item tabella tempi fast vs full sim
 \item Limitazioni della fast sim
+\item studio stabilit\`a con $\Delta$R
+\item far vedere distribuzioni piatte in generazione evento PG?
+\item scrivere la storia dei long cluster?
+\item scrivere che simuliamo solo il tracciatore
+\item dire truth/reco
+\item chiedere se va bene mettere plot che non ci sono nella tesi
+\item digi e ricostruzione tracce
+\item matching?
+\item bias in backup
+\item risoluzione(pt)
 \end{itemize}
 \end{frame}
+
+\begin{frame}
+\frametitle{Cose da aggiungere - 2}
+\begin{itemize}
+\item esempio calcolo risoluzione da distribuzione
+\item risoluzione in funzione di pileup per mostrare che \`e stabile
+\item una delle due Z deve essere offshell
+\item distribuzione eta e pt pileup
+\item difficolt\`a dell'andare in avanti (campo magnetico, materiale, parametro di impatto rispetto all'asse)
+\end{itemize}
+\end{frame}
+
 %-----------------------------------------
+\begin{frame}
+\frametitle{Cose da chiedere}
+\begin{itemize}
+\item Nella slide del numero di hit, perché ExtBrl4 ne ha leggermente meno anche nel primo bin?
+\item efficienza che sale con pt
+\end{itemize}
+\end{frame}
 
 \end{document}
