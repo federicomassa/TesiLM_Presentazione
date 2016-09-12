@@ -3,6 +3,7 @@
 \usecolortheme{default}
 \setbeamercolor{itemize item}{fg=darkred!80!black}
 
+
 \makeatletter
 \setbeamertemplate{footline}
 {
@@ -587,35 +588,39 @@ Efficienza media dipendente dal $p_{T}$: (90 $\div$ 95)\ \%
 
 \begin{frame}[t]
 \frametitle{Generazione dell'evento}
-
+\vskip-0.4cm
+\begin{block}{}
 \begin{itemize}
 \item 50'000 eventi di $gg\rightarrow H \rightarrow ZZ^{*} \rightarrow 4\mu$ (segnale) \tikzmark{topbrace}
 \item 16'000 eventi di $ZZ^{(*)} \rightarrow 4\mu$ (fondo) \tikzmark{bottombrace}
 \end{itemize}
-
-\setbeamercolor{local structure}{fg=dred} 
-\begin{itemize}
-\item $\langle\mu\rangle$ = 200, 13 TeV, ExtBrl4, IExtBrl4, InclBrl4 layouts
-\item Eventi contenti 4 muoni + fotoni di final-state-radiation con $p_{T, max}^{\gamma} < 1.5$ GeV
-\end{itemize}
-%[\color{red}\scalebox{0.9}{\ball}]
 \begin{tikzpicture}[overlay, remember picture]
 \draw [decoration={brace,amplitude=0.5em},decorate,ultra thick,black]
 let \p1=(topbrace), \p2=(bottombrace) in
 ({max(\x1,\x2)}, {\y1+0.8em}) -- node[right=0.6em] {POWHEG} ({max(\x1,\x2)}, {\y2});
 \end{tikzpicture}
+\setbeamercolor{local structure}{fg=dred} 
+\vskip-.5cm
+\begin{itemize}
+\item $\langle\mu\rangle$ = 200, 13 TeV, ExtBrl4, IExtBrl4, InclBrl4 layouts
+\item Eventi contenti 4 muoni + fotoni di final-state-radiation con $p_{T, max}^{\gamma} < 1.5$ GeV
+\end{itemize}
+%[\color{red}\scalebox{0.9}{\ball}]
 %
+\end{block}
+
 
 \begin{columns}
 \begin{column}{.5\textwidth}
 \centering
-Massa invariante di $4\mu$ (fondo)
-\includegraphics[width=\textwidth]{ZZ4mu/gen4muMass4}
+%Produzione
+\includegraphics<1->[width=.9\textwidth,height=4cm]{ggF2}
 \end{column}
 \begin{column}{.5\textwidth}
 \centering
-$p_{T}$ dei fotoni\par
-\includegraphics[width=\textwidth]{HZZ4mu/photonPt4}
+%Decadimento
+\includegraphics<1>[width=\textwidth,height=4cm]{HZZ4mu_12}
+\includegraphics<2>[width=\textwidth, height=4cm]{HZZ4mu_22}
 \end{column}
 \end{columns}
 \end{frame}
@@ -717,6 +722,23 @@ deve avere $|\eta| <$ 2.7;
 \end{frame}
 
 %-----------------------------------------
+\begin{frame}
+\frametitle{Truth mass + pt selection}
+\begin{columns}
+\begin{column}{.5\textwidth}
+\centering
+Massa invariante di $4\mu$ (fondo)
+\includegraphics[width=\textwidth]{ZZ4mu/gen4muMass4}
+\end{column}
+\begin{column}{.5\textwidth}
+\centering
+$p_{T}$ dei fotoni\par
+\includegraphics[width=\textwidth]{HZZ4mu/photonPt4}
+\end{column}
+\end{columns}
+\end{frame}
+%-----------------------------------------
+
 \begin{frame}
 \frametitle{Cose da chiedere}
 \begin{itemize}
