@@ -281,11 +281,11 @@ flusso di radiazione di HL-LHC
 \begin{column}{0.5\textwidth}
 	\begin{itemize}
 	\small
-	\item Solo rivelatori al silicio \\ (no TRT)
 	\item Copertura angolare estesa: $|\eta| < 2.5 \rightarrow 4.0$
-	\item 5 strati di pixel + 4 SCT
+	\item 5 strati di pixel + 4 SCT (no TRT)
 	\item Pixel a maggiore risoluzione
 	\item Strip pi\`u corte
+	\item ExtBrl4 non ancora ottimizzato
 	\end{itemize}
 	\ \ \ \
 \end{column}
@@ -422,13 +422,47 @@ coordinate (zoomEdge) at (\x6, \y6 + \n{zoomheight}*0.75);
 	
 \end{frame}
 
-\section{Studio di singolo pione}
+\section{}
+%-----------------------------------------
+\begin{frame}
+
+
+\Large{\color{dred}1. Studio di singola particella}\\
+\bigskip
+\bigskip
+\bigskip
+\Large{\color{gray}2. Studio del canale $gg\rightarrow H \rightarrow ZZ^{*} \rightarrow 4\mu$}
+
+\end{frame}
+\section{Studio di singolo $\pi^{\pm}$}
 %-----------------------------------------
 
 \begin{frame}
-\begin{center}
-\huge{\textbf{\color{dred} Studio di singola particella: $\pi^{\pm}$}}
-\end{center}
+\frametitle{Motivazioni dello studio}
+
+In questo studio:\\
+\textbf{singolo \boldmath$\pi^{\pm}$} + \textbf{pile-up (simulazione veloce)} 
+
+\begin{itemize}
+\item<2-> Misura delle prestazioni
+di tracciatura del rivelatore in condizioni controllate;
+\item<3-> Verificare che il rivelatore rispetti i requisiti imposti dalla collaborazione nelle
+condizioni di pile-up di HL-LHC;
+\end{itemize}
+
+\onslide<4-> {Perch\'e pioni carichi?}
+\begin{itemize}
+\item<4-> I pioni carichi rilasciano energia:
+	
+	\setbeamercolor{local structure}{fg=dred}
+	\begin{itemize}
+	\item  in modo quasi continuo per \textit{ionizzazione}
+	\item \textit{interazione forte} con i nuclei $\rightarrow $ produzione di particelle secondarie
+	\end{itemize}
+\vskip.3cm
+\setbeamercolor{local structure}{fg=blue}
+\item<5->[$\Rightarrow$] Problematiche nella tracciatura
+\end{itemize}
 \end{frame}
 
 %-----------------------------------------
@@ -563,15 +597,50 @@ $\epsilon\ (\eta \in\ $bin$_{i}) = $ P(traccia ricostruita, non fake $\vert$ tru
 Efficienza media dipendente dal $p_{T}$: (90 $\div$ 95)\ \%
 \end{frame}
 
-%-----------------------------------------
 \section{}
+%-----------------------------------------
 \begin{frame}
-\begin{center}
-\huge{\textbf{\color{dred} Studio del canale H \boldmath$\rightarrow$ ZZ$^{*} \rightarrow 4\mu$}}
-\end{center}
+
+
+\Large{\color{gray}1. Studio di singola particella}\\
+\bigskip
+\bigskip
+\bigskip
+\Large{\color{dred}2. Studio del canale $gg\rightarrow H \rightarrow ZZ^{*} \rightarrow 4\mu$}
+
 \end{frame}
 
+
 \section{Studio del bosone di Higgs in 4 muoni}
+%-----------------------------------------
+
+\begin{frame}[t]
+\frametitle{Motivazioni dello studio}
+
+\textbf{\color{dred}Obiettivo}
+\begin{itemize}
+\item[\color{black}$\Rightarrow$] Verificare che i layout disponibili per ITk sono adeguati allo studio di questo canale, 
+confrontando anche con studi gi\`a eseguiti
+\end{itemize}
+\bigskip
+\textbf{Perch\'e studiare il bosone di Higgs?}
+\begin{itemize}
+\item[\color{black}$\Rightarrow$] \`E uno degli obiettivi principali di HL-LHC (conferma SM o nuova fisica)
+\end{itemize}
+
+\textbf{Perch\'e il canale di decadimento in 4 muoni?}
+\begin{itemize}
+\item[\color{black}$\Rightarrow$] Pur non essendo un canale particolarmente frequente, ha una segnatura molto pulita
+\end{itemize}
+
+\textbf{Perch\'e il canale di produzione gluon-gluon fusion?}
+\begin{itemize}
+\item[\color{black}$\Rightarrow$] \`E il canale di produzione pi\'u frequente ad LHC, e d\`a luogo ad un singolo
+Higgs senza jet associati $\rightarrow$ pi\`u semplice per la tracciatura
+\end{itemize}
+
+
+\end{frame}
 %-----------------------------------------
 
 \begin{frame}[t]
@@ -602,7 +671,7 @@ let \p1=(topbrace), \p2=(bottombrace) in
 \setbeamercolor{local structure}{fg=dred} 
 \vskip-.5cm
 \begin{itemize}
-\item $\langle\mu\rangle$ = 200, 13 TeV, ExtBrl4, IExtBrl4, InclBrl4 layouts
+\item $\langle\mu\rangle$ = 200 (Pythia8), 13 TeV, ExtBrl4, IExtBrl4, InclBrl4 layouts
 \item Eventi contenti 4 muoni + fotoni di final-state-radiation con $p_{T, max}^{\gamma} < 1.5$ GeV
 \end{itemize}
 %[\color{red}\scalebox{0.9}{\ball}]
@@ -627,37 +696,6 @@ let \p1=(topbrace), \p2=(bottombrace) in
 
 %-----------------------------------------
 
-\begin{frame}[t]
-\frametitle{Distribuzione di massa dei bosoni Z}
-
-\begin{itemize}
-\item[\color{black}--] On-shell: Z con massa pi\`u vicina a quella di riposo
-\end{itemize}
-\bigskip
-\begin{columns}
-\begin{column}{.5\textwidth}
-\centering
-$H \rightarrow ZZ^* \rightarrow 4\mu$
-\includegraphics[width=\textwidth]{HZZ4mu/genZMass}
-\end{column}
-\begin{column}{.5\textwidth}
-\centering
-$ZZ^{(*)} \rightarrow 4\mu$\par
-\includegraphics[width=\textwidth]{ZZ4mu/genZMass}
-\end{column}
-\end{columns}
-
-\begin{columns}
-\begin{column}{.6\textwidth}
-\end{column}
-\begin{column}{.4\textwidth}
-Picco {\color{dred} off-shell} a $\sim$ 90 GeV: componente ZZ del fondo
-\end{column}
-\end{columns}
-
-\end{frame}
-
-%-----------------------------------------
 \begin{frame}
 \frametitle{Caratteristiche dei muoni ricostruiti}
 
@@ -666,14 +704,15 @@ Picco {\color{dred} off-shell} a $\sim$ 90 GeV: componente ZZ del fondo
 \end{column}
 \begin{column}{.41\textwidth}
 \centering
+\onslide<1->{
 $p_{T}$
-\includegraphics[width=\textwidth]{muonPt2}
+\includegraphics<1->[width=\textwidth]{muonPt2}}
 \end{column}
 \begin{column}{.41\textwidth}
 \centering
-Muoni con $|\eta| > 4.0$ 
-\includegraphics<1>[width=\textwidth]{truthOutsideDetector2}
-\includegraphics<2>[width=\textwidth]{truthOutsideDetector3}
+\onslide<2->{Muoni con $|\eta| > 4.0$
+\includegraphics<2>[width=\textwidth]{truthOutsideDetector2}
+\includegraphics<3->[width=\textwidth]{truthOutsideDetector3}}
 \end{column}
 \begin{column}{.09\textwidth}
 \end{column}
@@ -684,13 +723,14 @@ Muoni con $|\eta| > 4.0$
 \end{column}
 \begin{column}{.41\textwidth}
 \centering
-$p_{T} \times \sigma(q/p_{T})$
-\includegraphics[width=\textwidth]{HZZ4mu/sigQPt_abseta}
+\onslide<4->{$p_{T} \times \sigma(q/p_{T})$
+\includegraphics[width=\textwidth]{HZZ4mu/sigQPt_abseta}}
 \end{column}
 \begin{column}{.41\textwidth}
 \centering
+\onslide<5->{
 Efficienza di ricostruzione
-\includegraphics[width=\textwidth]{HZZ4mu/eff_abseta}
+\includegraphics<5->[width=\textwidth]{HZZ4mu/eff_abseta}}
 \end{column}
 \begin{column}{.09\textwidth}
 \end{column}
@@ -704,7 +744,8 @@ Efficienza di ricostruzione
 \frametitle{Risoluzione in massa (InclBrl4)}
 \setbeamercolor{local structure}{fg=black}
 \begin{itemize}
-\item[\color{black}--] Agli eventi viene applicata una selezione per identificare il segnale e minimizzare il fondo 
+\item[\color{black}--] \small Si ipotizza 100\% di efficienza di ricostruzione dei muoni per semplicit\`a
+\item[\color{black}--] \small Selezione per identificare il segnale e minimizzare il fondo
 \end{itemize}
 
 \begin{columns}
@@ -800,11 +841,18 @@ al canale fisico studiato.
 \bigskip
 \onslide<4-> {
 \centering
-\color{dred} Grazie per l'attenzione
+\Large \color{dred} Grazie per l'attenzione
 }
 
 \end{frame}
 
+\section{Backup}
+%-----------------------------------------
+\begin{frame}
+\begin{center}
+\huge{\color{dred}Backup slides}
+\end{center}
+\end{frame}
 %-----------------------------------------
 
 \begin{frame}[t]
@@ -836,6 +884,38 @@ deve avere $|\eta| <$ 2.7;
 \end{frame}
 
 %----------------------------------------------
+
+\begin{frame}[t]
+\frametitle{Distribuzione di massa dei bosoni Z}
+
+\begin{itemize}
+\item[\color{black}--] On-shell: Z con massa pi\`u vicina a quella di riposo
+\end{itemize}
+\bigskip
+\begin{columns}
+\begin{column}{.5\textwidth}
+\centering
+$H \rightarrow ZZ^* \rightarrow 4\mu$
+\includegraphics[width=\textwidth]{HZZ4mu/genZMass}
+\end{column}
+\begin{column}{.5\textwidth}
+\centering
+$ZZ^{(*)} \rightarrow 4\mu$\par
+\includegraphics[width=\textwidth]{ZZ4mu/genZMass}
+\end{column}
+\end{columns}
+
+\begin{columns}
+\begin{column}{.6\textwidth}
+\end{column}
+\begin{column}{.4\textwidth}
+Picco {\color{dred} off-shell} a $\sim$ 90 GeV: componente ZZ del fondo
+\end{column}
+\end{columns}
+
+\end{frame}
+
+%-----------------------------------------
 
 \section{DA AGGIUNGERE}
 \begin{frame}
@@ -869,6 +949,9 @@ deve avere $|\eta| <$ 2.7;
 \item nRecotrk
 \item confronto pileup nell'Higgs
 \item eff muoni
+\item plot cross section e BR
+\item tabella deltaMu/mu atteso
+\item slide iniziale per inquadrare il lavoro
 \end{itemize}
 \end{frame}
 
