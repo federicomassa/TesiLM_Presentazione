@@ -17,7 +17,7 @@
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
     \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
-    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+    \insertframenumber{} / \ref{Conclusions}\hspace*{2ex} 
   \end{beamercolorbox}}%
   \vskip0pt%
 }
@@ -367,7 +367,7 @@ coordinate (zoomEdge) at (\x6, \y6 + \n{zoomheight}*0.75);
 \pause
 \pause
 \begin{tcolorbox}{}
-\onslide<+->{\small \textbf{Problema:} la simulazione delle risposta del rivelatore interno ad HL-LHC impiega \\
+\onslide<+->{\small \textbf{Problema:} la simulazione del rivelatore interno ad HL-LHC impiega \\
  $\sim$ \textbf{1 ora/evento}} 
 \onslide<+->{\textbf{\color{dred} $\rightarrow$ Tecniche di simulazione veloce}}
 \end{tcolorbox}
@@ -658,6 +658,154 @@ Picco {\color{dred} off-shell} a $\sim$ 90 GeV: componente ZZ del fondo
 \end{frame}
 
 %-----------------------------------------
+\begin{frame}
+\frametitle{Caratteristiche dei muoni ricostruiti}
+
+\begin{columns}
+\begin{column}{.09\textwidth}
+\end{column}
+\begin{column}{.41\textwidth}
+\centering
+$p_{T}$
+\includegraphics[width=\textwidth]{muonPt2}
+\end{column}
+\begin{column}{.41\textwidth}
+\centering
+Muoni con $|\eta| > 4.0$ 
+\includegraphics<1>[width=\textwidth]{truthOutsideDetector2}
+\includegraphics<2>[width=\textwidth]{truthOutsideDetector3}
+\end{column}
+\begin{column}{.09\textwidth}
+\end{column}
+\end{columns}
+
+\begin{columns}
+\begin{column}{.09\textwidth}
+\end{column}
+\begin{column}{.41\textwidth}
+\centering
+$p_{T} \times \sigma(q/p_{T})$
+\includegraphics[width=\textwidth]{HZZ4mu/sigQPt_abseta}
+\end{column}
+\begin{column}{.41\textwidth}
+\centering
+Efficienza di ricostruzione
+\includegraphics[width=\textwidth]{HZZ4mu/eff_abseta}
+\end{column}
+\begin{column}{.09\textwidth}
+\end{column}
+\end{columns}
+
+
+\end{frame}
+%-----------------------------------------
+
+\begin{frame}
+\frametitle{Risoluzione in massa (InclBrl4)}
+\setbeamercolor{local structure}{fg=black}
+\begin{itemize}
+\item[\color{black}--] Agli eventi viene applicata una selezione per identificare il segnale e minimizzare il fondo 
+\end{itemize}
+
+\begin{columns}
+\begin{column}{0.09\textwidth}
+\end{column}
+\begin{column}{0.41\textwidth}
+\includegraphics[width=\textwidth]{HZZ4mu/sigRecoOnShellMass2}
+\end{column}
+\begin{column}{0.41\textwidth}
+\includegraphics[width=\textwidth]{HZZ4mu/sigRecoOffShellMass2}
+\end{column}
+\begin{column}{0.09\textwidth}
+\end{column}
+\end{columns}
+\vskip-0.1cm
+
+\begin{columns}
+\begin{column}{0.09\textwidth}
+\end{column}
+\begin{column}{0.41\textwidth}
+\includegraphics[width=\textwidth]{HZZ4mu/sigRecoMass2}
+\end{column}
+\begin{column}{0.41\textwidth}
+\begin{itemize}
+\item \small All'aumentare di $\eta$, la risoluzione peggiora a causa della perdita
+di risoluzione in $p_{T}$ delle tracce
+\end{itemize}
+\end{column}
+\begin{column}{0.09\textwidth}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+%-----------------------------------------
+\begin{frame}[t]
+\frametitle{Significanza del canale}
+\begin{center}
+\includegraphics[width=.5\textwidth]{SBInclBrl4_2}
+\end{center}
+
+\begin{itemize}
+\item \small Segnale e fondo definiti come il numero di eventi in una regione ampia
+\mbox{1.5 $\times \sigma_{H}$} attorno al picco
+\item \small Significanza = $\frac{S}{\sqrt{S + B}}$
+\item \small $\mu$ = $\frac{(\sigma \times BR)_{mis.}}{(\sigma \times BR)_{SM}}$ $\rightarrow 
+\Delta\mu/\mu \simeq \frac{\sqrt{S + B}}{S}$ (stat.)
+\end{itemize}
+\end{frame}
+
+%----------------------------------------------
+
+\begin{frame}
+\frametitle{Significanza del canale - Risultati}
+\centering
+\includegraphics[width=.9\textwidth, height=7.5cm]{significance}
+\end{frame}
+
+
+\section{}
+%-----------------------------------------
+\begin{frame}
+\frametitle{Conclusioni - 1}
+\begin{itemize}
+\item<1-> Abbiamo esteso una tecnica di simulazione veloce gi\`a esistente
+a campioni di fisica, testandone l'efficacia sullo studio delle prestazioni di ITk;
+\item<2-> I layout proposti dalla collaborazione sono robusti rispetto al pile-up;
+\item<3-> Abbiamo misurato il canale $H \rightarrow ZZ^{*} \rightarrow 4\mu$ con
+un rapporto segnale/fondo di almeno 7 in tutte le regioni angolari e con un'incertezza
+su $\mu$ del 2.5\% (senza includere l'incertezza sulla luminosit\`a);
+\item<4-> In generale, i layout ``inclined'' mostrano prestazioni migliori rispetto a quello
+``extended'', ma quest'ultimo soffre della mancanza di un algoritmo di ricostruzione ottimizzato.
+\end{itemize}
+\end{frame}
+
+%-----------------------------------------
+\begin{frame}[label=Conclusions]
+\frametitle{Conclusioni - 2}
+\onslide<1->{
+Quindi:\\
+\setbeamercolor{local structure}{fg=dred} 
+\begin{itemize}
+\item<2-> A questo stadio preliminare \`e presto per trarre conclusioni sulla scelta del layout,
+ma questi studi sono utili per mostrare che il rivelatore rispetta approssimativamente 
+i requisiti imposti;
+\item<3-> L'estensione della copertura angolare a 3.2 fornisce un buon aumento della statistica, mentre estendere ulteriormente a 4.0 non \`e particolarmente utile, limitatamente
+al canale fisico studiato.
+
+\end{itemize}}
+
+\bigskip
+\bigskip
+\bigskip
+\onslide<4-> {
+\centering
+\color{dred} Grazie per l'attenzione
+}
+
+\end{frame}
+
+%-----------------------------------------
 
 \begin{frame}[t]
 \frametitle{Selezione dell'analisi}
@@ -718,6 +866,9 @@ deve avere $|\eta| <$ 2.7;
 \item una delle due Z deve essere offshell
 \item distribuzione eta e pt pileup
 \item difficolt\`a dell'andare in avanti (campo magnetico, materiale, parametro di impatto rispetto all'asse)
+\item nRecotrk
+\item confronto pileup nell'Higgs
+\item eff muoni
 \end{itemize}
 \end{frame}
 
