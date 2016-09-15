@@ -16,21 +16,35 @@
     \usebeamerfont{title in head/foot}Relatori: G. Chiarelli, C. Gemme
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
-    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \usebeamerfont{date in head/foot}23 Settembre 2016\hspace*{2em}
     \insertframenumber{} / \ref{Conclusions}\hspace*{2ex} 
   \end{beamercolorbox}}%
   \vskip0pt%
 }
 \makeatother
 
+\setbeamercolor{section in head/foot}{fg=white, bg=darkred!95!white}
+
+\setbeamercolor{palette quaternary}{use=structure, bg=darkred!80!black} % changed this
+
+
+\setbeamertemplate{headline}{%
+\leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{palette quaternary}%
+    \insertsectionnavigationhorizontal{\paperwidth}{}{\hfill \hfill}
+    \end{beamercolorbox}%
+  }
+}
+
 \title{Tracking Performances of the ATLAS detector \\
 for the HL-LHC in the 
 $H \rightarrow ZZ^{*} \rightarrow 4\mu$ channel}
 %\subtitle{Laurea Magistrale in Fisica}
-\author{Federico Massa}
-\institute{Laurea Magistrale in Fisica \\
-Universit\`a di Pisa}
-\date{23 Settembre 2016}
+%\author{Federico Massa}
+\institute{\large{Laurea Magistrale in Fisica \\
+Universit\`a di Pisa}}
+\date{\small 23 Settembre 2016}
 
 %\setbeameroption{show notes}
 \setbeameroption{hide notes}
@@ -51,8 +65,51 @@ Universit\`a di Pisa}
 
 %-----------------------------------------
 
+{\setbeamertemplate{footline}{}
+\setbeamertemplate{headline}{}
 \begin{frame}
 \titlepage
+\begin{columns}[t]
+\begin{column}{.1\textwidth}
+\end{column}
+\begin{column}{.65\textwidth}
+\textbf{Relatori:}\\[0.05cm]
+Giorgio Chiarelli \\
+Claudia Gemme
+\end{column}
+\begin{column}{.25\textwidth}
+\textbf{Candidato:}\\[0.05cm]
+Federico Massa
+\end{column}
+
+\end{columns}
+\end{frame}}
+\addtocounter{framenumber}{-1}
+
+\begin{frame}
+\setbeamercolor{normal text}{fg=dred,bg=}
+%\setbeamercolor{alerted text}{fg=dred,bg=}
+\usebeamercolor{normal text}
+
+\setbeamercovered{dynamic}
+
+\frametitle{Struttura della presentazione}
+\setbeamercolor{local structure}{fg=dred}
+\begin{itemize}[<+->]
+\item LHC e l'esperimento ATLAS
+\vskip0.5cm
+\item {Fase di alta luminosit\'a di LHC}
+\vskip0.5cm
+\item {Upgrade del rivelatore interno}
+\vskip0.5cm
+\item {Tecnica di simulazione veloce}
+\vskip0.5cm
+\item {Studio di singola particella}
+\vskip0.5cm
+\item {Misura del canale $H\rightarrow 4\mu$}
+\vskip0.5cm
+\end{itemize}
+
 \end{frame}
 
 \section{Introduzione}
@@ -90,63 +147,16 @@ i processi hard, in cui i quark interagiscono direttamente per dare luogo a inte
 Le collisioni possono essere:
 \begin{itemize}
 \item \textbf{elastiche}: i protoni rimangono intatti
-\item \textbf{inelastiche}: lo stato finale è diverso da quello iniziale
+\item \textbf{anelastiche}: lo stato finale è diverso da quello iniziale
 	\setbeamercolor{local structure}{fg=red}
 	\begin{itemize}
-	\item \textbf{``hard''}: la collisione avviene direttamente tra partoni con produzione di uno stato finale raro ``interessante'' 
+	\item \textbf{di ``hard-scattering''}: la collisione avviene direttamente tra partoni con produzione di uno stato finale raro
 	\end{itemize}
 \end{itemize}
 
 \centering
 \includegraphics[width=.7\textwidth]{protonCollision}
 
-
-\end{frame}
-
-%-----------------------------------------
-
-\begin{frame}
-\setbeamercolor{normal text}{fg=gray!50!white,bg=}
-\setbeamercolor{alerted text}{fg=black,bg=}
-\usebeamercolor{normal text}
-
-\frametitle{Il rivelatore di ATLAS}
-\begin{columns}
-\begin{column}{0.6\textwidth}
-\centering
-\includegraphics<+->[width=\textwidth]{atlas}
-\end{column}
-\begin{column}{0.4\textwidth}
-	\begin{itemize}
-	\item \alert<+>{\small \textbf{Solenoide e toroidi:} producono un campo magnetico che fa curvare
-	le particelle cariche}
-	\item \alert<+>{\small \textbf{Rivelatore interno:} ricostruisce i vertici e misura l'impulso delle particelle cariche}
-	\item \alert<+>{\small \textbf{Calorimetri:} misurano l'energia di particelle cariche e neutre}
-	\item \alert<+>{\small \textbf{Camere dei muoni:} misurano l'impulso dei muoni}
-	\end{itemize}
-\end{column}
-\end{columns}
-\end{frame}
-
-%-----------------------------------------
-
-\begin{frame}
-\frametitle{Il Rivelatore Interno di ATLAS}
-\centering
-
-\begin{center}
-        \begin{tikzpicture}
-            \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.6\textwidth,angle=-90]{NewID}};
-            \node[align=center,red] at ($(image.south east) + (2,1.4)$) {\vbox{\small
-            \begin{itemize}
-		\item $\eta = -\log{\tan{\frac{\theta}{2}}}$
-		\item Copertura angolare: $|\eta| < 2.5$
-		\item 4 strati di Pixel
-		\item 4 strati di microstrip (SCT) 
-		\item Transition Radiation Tracker (TRT)
-            \end{itemize}}};
-        \end{tikzpicture}
-    \end{center}
 
 \end{frame}
 
@@ -174,8 +184,8 @@ $$
 \medskip
 con:\\
 \begin{itemize}
-\item $\mathcal{L}$: \textbf{luminosit\`a istantanea}, termine geometrico che descrive la geometria del fascio 
 \item $\sigma$: \textbf{sezione d'urto} del processo considerato
+\item $\mathcal{L}$: \textbf{luminosit\`a istantanea}, termine geometrico che descrive la geometria del fascio 
 \item $\int\mathcal{L}dt$: \textbf{luminosit\`a integrata} nel tempo di presa dati
 \end{itemize}
 \bigskip 
@@ -194,6 +204,56 @@ $$
 
 }
 \end{frame}
+
+%-----------------------------------------
+
+\begin{frame}
+\setbeamercolor{normal text}{fg=gray!50!white,bg=}
+\setbeamercolor{alerted text}{fg=black,bg=}
+\usebeamercolor{normal text}
+
+\frametitle{Il rivelatore di ATLAS}
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\centering
+\includegraphics<+->[width=\textwidth]{atlas}
+\end{column}
+\begin{column}{0.4\textwidth}
+	\begin{itemize}
+	\item \alert<+>{\small \textbf{Solenoide e toroidi:} producono un campo magnetico che fa curvare
+	le particelle cariche}
+	\item \alert<+>{\small \textbf{Rivelatore interno:} ricostruisce i vertici e le tracce delle particelle cariche, in particolare misurandone l'impulso}
+	\item \alert<+>{\small \textbf{Calorimetri:} misurano l'energia di particelle cariche e neutre}
+	\item \alert<+>{\small \textbf{Camere dei muoni:} misurano l'impulso dei muoni}
+	\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+%-----------------------------------------
+
+\begin{frame}
+\frametitle{Il Rivelatore Interno}
+\centering
+
+\begin{center}
+        \begin{tikzpicture}
+            \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=.6\textwidth,angle=-90]{NewID}};
+            \node[align=center,red] at ($(image.south east) + (2,1.4)$) {\vbox{\small
+            \begin{itemize}
+		\item $\eta = -\log{(\tan{\frac{\theta}{2}})}$
+		\item Copertura angolare: $|\eta| < 2.5$
+		\item 4 strati di Pixel
+		\item 4 strati di microstrip (SCT) 
+		\item Transition Radiation Tracker (TRT)
+            \end{itemize}}};
+        \end{tikzpicture}
+    \end{center}
+
+\end{frame}
+
+%-----------------------------------------
+
 
 %-----------------------------------------
 
@@ -233,11 +293,12 @@ LHC prevede una serie di upgrade per aumentare la luminosit\`a istantanea \\
 \begin{frame}[t]
 \frametitle{Pile-up}
 Il numero di collisioni per ``bunch-crossing'' ad HL-LHC aumenta
-a causa dell'aumento della luminosit\`a e della sezione d'urto inelastica.\\
+a causa dell'aumento della luminosit\`a e della sezione d'urto inelastica 
+($\langle\mu\rangle = \sigma_{inel} \times \mathcal{L} \times 25$ ns)\\
 
 \begin{itemize}
 \item Le collisioni che avvengono \textit{nello stesso bunch} di quella di interesse
-rappresentano il cosiddetto \textbf{in-time pile-up}
+rappresentano il cosiddetto \textbf{in-time pile-up}, mediamente $\langle\mu\rangle$
 \item valore nominale ad HL-LHC: 140
 \item valore di picco ad HL-LHC: 200
 \end{itemize}
@@ -285,7 +346,6 @@ flusso di radiazione di HL-LHC
 	\item 5 strati di pixel + 4 SCT (no TRT)
 	\item Pixel a maggiore risoluzione
 	\item Strip pi\`u corte
-	\item ExtBrl4 non ancora ottimizzato
 	\end{itemize}
 	\ \ \ \
 \end{column}
@@ -846,7 +906,6 @@ al canale fisico studiato.
 
 \end{frame}
 
-\section{Backup}
 %-----------------------------------------
 \begin{frame}
 \begin{center}
@@ -917,7 +976,6 @@ Picco {\color{dred} off-shell} a $\sim$ 90 GeV: componente ZZ del fondo
 
 %-----------------------------------------
 
-\section{DA AGGIUNGERE}
 \begin{frame}
 \frametitle{Cose da aggiungere}
 \begin{itemize}
