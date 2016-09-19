@@ -155,7 +155,7 @@ Le collisioni possono essere:
 \end{itemize}
 
 \centering
-\includegraphics[width=.7\textwidth]{protonCollision}
+\includegraphics[width=.5\textwidth]{collision1}
 
 
 \end{frame}
@@ -185,7 +185,8 @@ $$
 con:\\
 \begin{itemize}
 \item $\sigma$: \textbf{sezione d'urto} del processo considerato
-\item $\mathcal{L}$: \textbf{luminosit\`a istantanea}, termine geometrico che descrive la geometria del fascio 
+\item $\mathcal{L}$: \textbf{luminosit\`a istantanea}, numero di collisioni 
+per unit\'a di tempo e di area
 \item $\int\mathcal{L}dt$: \textbf{luminosit\`a integrata} nel tempo di presa dati
 \end{itemize}
 \bigskip 
@@ -195,7 +196,7 @@ Il numero medio di interazioni per ``bunch-crossing'' \`e quindi:\\
 \begin{columns}
 \begin{column}{0.6\textwidth}
 $$
-\langle\mu\rangle = \sigma_{inel.} \times \mathcal{L} \times 25\ \mathrm{ns} \mathrm{\mathbf{\ \simeq 23\ }(Run 2)} 
+\langle\mu\rangle \propto \sigma_{inel.} \times \mathcal{L} \mathrm{\mathbf{\ \simeq 23\ }(Run 2)} 
 $$
 \end{column}
 \begin{column}{0.4\textwidth}
@@ -208,9 +209,6 @@ $$
 %-----------------------------------------
 
 \begin{frame}
-\setbeamercolor{normal text}{fg=gray!50!white,bg=}
-\setbeamercolor{alerted text}{fg=black,bg=}
-\usebeamercolor{normal text}
 
 \frametitle{Il rivelatore di ATLAS}
 \begin{columns}
@@ -220,11 +218,11 @@ $$
 \end{column}
 \begin{column}{0.4\textwidth}
 	\begin{itemize}
-	\item \alert<+>{\small \textbf{Solenoide e toroidi:} producono un campo magnetico che fa curvare
+	\item {\small \textbf{Solenoide e toroidi:} producono un campo magnetico che fa curvare
 	le particelle cariche}
-	\item \alert<+>{\small \textbf{Rivelatore interno:} ricostruisce i vertici e le tracce delle particelle cariche, in particolare misurandone l'impulso}
-	\item \alert<+>{\small \textbf{Calorimetri:} misurano l'energia di particelle cariche e neutre}
-	\item \alert<+>{\small \textbf{Camere dei muoni:} misurano l'impulso dei muoni}
+	\item {\small \textbf{Rivelatore interno:} ricostruisce i vertici e le tracce delle particelle cariche, in particolare misurandone l'impulso}
+	\item {\small \textbf{Calorimetri:} misurano l'energia di particelle cariche e neutre}
+	\item {\small \textbf{Camere dei muoni:} misurano le tracce dei muoni}
 	\end{itemize}
 \end{column}
 \end{columns}
@@ -294,7 +292,7 @@ LHC prevede una serie di upgrade per aumentare la luminosit\`a istantanea \\
 \frametitle{Pile-up}
 Il numero di collisioni per ``bunch-crossing'' ad HL-LHC aumenta
 a causa dell'aumento della luminosit\`a e della sezione d'urto inelastica 
-($\langle\mu\rangle = \sigma_{inel} \times \mathcal{L} \times 25$ ns)\\
+($\langle\mu\rangle \propto \sigma_{inel} \times \mathcal{L}$)\\
 
 \begin{itemize}
 \item Le collisioni che avvengono \textit{nello stesso bunch} di quella di interesse
@@ -381,9 +379,9 @@ InclBrl4: Pixel Layout
 			\n{figheight} = {veclen(\y1,\y2)},
 			\n{figwidth} = {veclen(\x1,\x2)},
 			\p3 = ($(\p1) - (0,\n{figheight}) + (.22*\n{figwidth},.25*\n{figheight})$)  in
-	node (rect) at (\p3) [draw,black,thick,minimum width=.05*\n{figwidth},minimum height=.18*\n{figheight}] {};
+	node (rect) at (\p3) [draw,red,thick,minimum width=.05*\n{figwidth},minimum height=.18*\n{figheight}] {};
 	%\draw<2->[red] (2.45,1) rectangle (3,2);    
-    \node[anchor=south west,inner sep=0] (zoom) at (4,-1.9) {\includegraphics[frame,width=.2\textwidth]{InclZoom}};
+    \node[anchor=south west,inner sep=0] (zoom) at (4,-1.9) {\includegraphics[cfbox=red 4pt,width=.2\textwidth]{InclZoom}};
 
 \path let \p4 = ($(zoom.south east)$),
 		\p5 = ($(fig.south east)$),
@@ -395,10 +393,10 @@ InclBrl4: Pixel Layout
 coordinate (zoomEdge) at (\x6, \y6 + \n{zoomheight}*0.75);
 %coordinate (zoomEdge) at (\x6, \y6);
 
-    \draw [black,thick] (rect.south east) -- ($(zoomEdge)$);
-    \draw [black,thick] (rect.south west) -- ($(zoom.south west)$);
-    \draw [black,thick] (rect.north west) -- ($(zoom.north west)$);
-    \draw [black,thick] (rect.north east) -- ($(zoom.north east)$);
+    \draw [red,thick] (rect.south east) -- ($(zoomEdge)$);
+    %\draw [black,thick] (rect.south west) -- ($(zoom.south west)$);
+    %\draw [black,thick] (rect.north west) -- ($(zoom.north west)$);
+    %\draw [black,thick] (rect.north east) -- ($(zoom.north east)$);
     }
 \end{tikzpicture}
 \end{center}
@@ -491,7 +489,7 @@ coordinate (zoomEdge) at (\x6, \y6 + \n{zoomheight}*0.75);
 \bigskip
 \bigskip
 \bigskip
-\Large{\color{gray}2. Studio del canale $gg\rightarrow H \rightarrow ZZ^{*} \rightarrow 4\mu$}
+\Large{\color{gray}2. Studio del canale $H \rightarrow ZZ^{*} \rightarrow 4\mu$}
 
 \end{frame}
 \section{Studio di singolo $\pi^{\pm}$}
@@ -666,7 +664,7 @@ Efficienza media dipendente dal $p_{T}$: (90 $\div$ 95)\ \%
 \bigskip
 \bigskip
 \bigskip
-\Large{\color{dred}2. Studio del canale $gg\rightarrow H \rightarrow ZZ^{*} \rightarrow 4\mu$}
+\Large{\color{dred}2. Studio del canale $H \rightarrow ZZ^{*} \rightarrow 4\mu$}
 
 \end{frame}
 
@@ -679,37 +677,50 @@ Efficienza media dipendente dal $p_{T}$: (90 $\div$ 95)\ \%
 
 \textbf{\color{dred}Obiettivo}
 \begin{itemize}
-\item[\color{black}$\Rightarrow$] Verificare che i layout disponibili per ITk sono adeguati allo studio di questo canale, 
-confrontando anche con studi gi\`a eseguiti
+\item[\color{black}$\Rightarrow$] \small Verificare adeguatezza dei layout in questo canale
 \end{itemize}
-\bigskip
+\medskip
 \textbf{Perch\'e studiare il bosone di Higgs?}
 \begin{itemize}
-\item[\color{black}$\Rightarrow$] \`E uno degli obiettivi principali di HL-LHC (conferma SM o nuova fisica)
+\item[\color{black}$\Rightarrow$] \small \`E uno degli obiettivi principali di HL-LHC (conferma SM o nuova fisica)
 \end{itemize}
 
 \textbf{Perch\'e il canale di decadimento in 4 muoni?}
 \begin{itemize}
-\item[\color{black}$\Rightarrow$] Pur non essendo un canale particolarmente frequente, ha una segnatura molto pulita
+\item[\color{black}$\Rightarrow$] \small Pur non essendo un canale particolarmente frequente, ha una segnatura molto pulita
 \end{itemize}
 
 \textbf{Perch\'e il canale di produzione gluon-gluon fusion?}
 \begin{itemize}
-\item[\color{black}$\Rightarrow$] \`E il canale di produzione pi\'u frequente ad LHC, e d\`a luogo ad un singolo
+\item[\color{black}$\Rightarrow$] \small \`E il canale di produzione pi\'u frequente ad LHC, e d\`a luogo ad un singolo
 Higgs senza jet associati $\rightarrow$ pi\`u semplice per la tracciatura
 \end{itemize}
 
+\begin{columns}
+\begin{column}{.5\textwidth}
+\centering
+%Produzione
+\includegraphics[width=.5\textwidth,height=2.5cm]{ggF2}
+\end{column}
+\begin{column}{.5\textwidth}
+\centering
+%Decadimento
+\includegraphics[width=.5\textwidth,height=2.5cm]{HZZ4mu_12}
+\end{column}
+\end{columns}
 
 \end{frame}
 %-----------------------------------------
 
 \begin{frame}[t]
 \frametitle{Metodo di simulazione veloce}
+\centering
+\includegraphics[width=.5\textwidth, height=6cm]{HiggsCones}
 
-\only<1>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT}}
-\only<2>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT2}}
-\only<3>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT3}}
-\only<4>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT4}}
+\begin{itemize}
+\item Regione di interesse (RoI) definita per ogni muone in $H \rightarrow 4\mu$
+\item Stesso campione generato di $H \rightarrow 4\mu$ per i confronti tra layout
+\end{itemize}
 
 \end{frame}
 
@@ -738,18 +749,17 @@ let \p1=(topbrace), \p2=(bottombrace) in
 %
 \end{block}
 
-
 \begin{columns}
 \begin{column}{.5\textwidth}
 \centering
 %Produzione
-\includegraphics<1->[width=.9\textwidth,height=4cm]{ggF2}
+\includegraphics[width=.9\textwidth,height=4cm]{HZZ4mu_22}
 \end{column}
 \begin{column}{.5\textwidth}
 \centering
 %Decadimento
-\includegraphics<1>[width=\textwidth,height=4cm]{HZZ4mu_12}
-\includegraphics<2>[width=\textwidth, height=4cm]{HZZ4mu_22}
+$p_{T}$ dei fotoni
+\includegraphics[width=\textwidth, height=4cm]{HZZ4mu/photonPt4}
 \end{column}
 \end{columns}
 \end{frame}
@@ -842,7 +852,7 @@ di risoluzione in $p_{T}$ delle tracce
 
 %-----------------------------------------
 \begin{frame}[t]
-\frametitle{Significanza del canale}
+\frametitle{Significativit\'a del canale}
 \begin{center}
 \includegraphics[width=.5\textwidth]{SBInclBrl4_2}
 \end{center}
@@ -850,7 +860,7 @@ di risoluzione in $p_{T}$ delle tracce
 \begin{itemize}
 \item \small Segnale e fondo definiti come il numero di eventi in una regione ampia
 \mbox{1.5 $\times \sigma_{H}$} attorno al picco
-\item \small Significanza = $\frac{S}{\sqrt{S + B}}$
+\item \small Significativit\'a = $\frac{S}{\sqrt{S + B}}$
 \item \small $\mu$ = $\frac{(\sigma \times BR)_{mis.}}{(\sigma \times BR)_{SM}}$ $\rightarrow 
 \Delta\mu/\mu \simeq \frac{\sqrt{S + B}}{S}$ (stat.)
 \end{itemize}
@@ -1037,6 +1047,17 @@ $p_{T}$ dei fotoni\par
 \item Nella slide del numero di hit, perché ExtBrl4 ne ha leggermente meno anche nel primo bin?
 \item efficienza che sale con pt
 \end{itemize}
+\end{frame}
+
+
+\begin{frame}[t]
+\frametitle{Metodo di simulazione veloce}
+
+\only<1>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT}}
+\only<2>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT2}}
+\only<3>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT3}}
+\only<4>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT4}}
+
 \end{frame}
 
 \end{document}
