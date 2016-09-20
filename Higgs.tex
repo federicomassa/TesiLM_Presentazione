@@ -15,7 +15,7 @@
     \usebeamerfont{title in head/foot}Supervisors: G. Chiarelli, C. Gemme
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
-    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \usebeamerfont{date in head/foot}Sept. 15, 2016\hspace*{2em}
     \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
   \end{beamercolorbox}}%
   \vskip0pt%
@@ -27,8 +27,8 @@ $H \rightarrow ZZ^{*} \rightarrow 4\mu$ channel \\
 with a fast sim method}
 %\subtitle{Subtitle}
 \author{Federico Massa}
-\institute{ITk Simulation \& Performance}
-\date{Sept. 7, 2016}
+\institute{Upgrade Physics}
+\date{}
 
 \usepackage[export]{adjustbox}
 \usepackage{tikz}
@@ -101,6 +101,19 @@ with a fast sim method}
 \end{frame}
 
 %----------------------------------------------
+\begin{frame}
+\frametitle{Fast vs Full sim - Time requirements}
+\includegraphics[width=\textwidth]{time}
+
+\begin{itemize}
+\item Table filled with data coming from muon samples at $\langle\mu\rangle$ = 200, fixed $p_{T}$ = 15 GeV
+\item Run on LXPLUS
+\item Time requirements at 50k events were extrapolated from smaller samples (5 events for Full Sim)
+\item Overhead time was not included
+\end{itemize}
+\end{frame}
+
+%----------------------------------------------
 
 \begin{frame}[t]
 \frametitle{The Fast Sim method - Algorithm}
@@ -145,25 +158,6 @@ Truth $4\mu$ mass in $ZZ^{(*)} \rightarrow 4\mu$
 \centering
 Photon $p_{T}$\par
 \includegraphics[width=\textwidth]{HZZ4mu/photonPt4}
-\end{column}
-\end{columns}
-\end{frame}
-
-%----------------------------------------------
-
-\begin{frame}
-\frametitle{Truth Z mass distribution}
-
-\begin{columns}
-\begin{column}{.5\textwidth}
-\centering
-$H \rightarrow ZZ^* \rightarrow 4\mu$
-\includegraphics[width=\textwidth]{HZZ4mu/genZMass}
-\end{column}
-\begin{column}{.5\textwidth}
-\centering
-$ZZ^{(*)} \rightarrow 4\mu$\par
-\includegraphics[width=\textwidth]{ZZ4mu/genZMass}
 \end{column}
 \end{columns}
 \end{frame}
@@ -432,6 +426,23 @@ statistics, slight improvement with 4.0
 \end{frame}
 
 %----------------------------------------------
+
+\begin{frame}
+\frametitle{Truth Z mass distribution}
+
+\begin{columns}
+\begin{column}{.5\textwidth}
+\centering
+$H \rightarrow ZZ^* \rightarrow 4\mu$
+\includegraphics[width=\textwidth]{HZZ4mu/genZMass}
+\end{column}
+\begin{column}{.5\textwidth}
+\centering
+$ZZ^{(*)} \rightarrow 4\mu$\par
+\includegraphics[width=\textwidth]{ZZ4mu/genZMass}
+\end{column}
+\end{columns}
+\end{frame}
 
 
 %\begin{frame}
