@@ -214,7 +214,8 @@ $$
 \begin{columns}
 \begin{column}{0.6\textwidth}
 \centering
-\includegraphics<+->[width=\textwidth]{atlas}
+\includegraphics<1>[width=\textwidth]{atlas}
+\includegraphics<2>[width=\textwidth]{atlas_2}
 \end{column}
 \begin{column}{0.4\textwidth}
 	\begin{itemize}
@@ -265,7 +266,7 @@ Aumento del numero di interazioni per unit\`a di tempo (N $\propto \sigma \times
 \end{itemize}}
 
 \onslide<2->{
-\includegraphics[width=\textwidth]{HLLHC_Plan}}
+\includegraphics[width=\textwidth]{HLLHC_Plan_2}}
 
 \end{frame}
 
@@ -316,8 +317,8 @@ rappresentano il cosiddetto \textbf{in-time pile-up}, mediamente $\langle\mu\ran
 \item valore di picco ad HL-LHC: 200
 \end{itemize}
 
-\only<1>{\includegraphics[width=\textwidth]{collisions20}}
-\only<2>{\includegraphics[width=\textwidth, height=4cm]{collisions140}}
+\only<1>{\includegraphics[width=\textwidth]{collisions20_2}}
+\only<2>{\includegraphics[width=\textwidth, height=4cm]{collisions140_2}}
 
 
 
@@ -363,16 +364,16 @@ flusso di radiazione di HL-LHC
 	\ \ \ \
 \end{column}
 \begin{column}{0.5\textwidth}
-\includegraphics[width=\textwidth,height=3.8cm]{ExtBrl4}
+\includegraphics[width=\textwidth,height=3.8cm]{ExtBrl4_2}
 \end{column}
 \end{columns}
 
 \begin{columns}
 \begin{column}{0.5\textwidth}
-\includegraphics[width=\textwidth,height=3.8cm]{IExtBrl4}
+\includegraphics[width=\textwidth,height=3.8cm]{IExtBrl4_2}
 \end{column}
 \begin{column}{0.5\textwidth}
-\includegraphics[width=\textwidth,height=3.8cm]{InclBrl4}
+\includegraphics[width=\textwidth,height=3.8cm]{InclBrl4_2}
 \end{column}
 \end{columns}
 
@@ -381,9 +382,9 @@ flusso di radiazione di HL-LHC
 %-----------------------------------------
 \begin{frame}
 \frametitle{Layout di ITk: Step-1}
-\includegraphics<1>[width=\textwidth]{ExtBrl4}
-\includegraphics<2>[width=\textwidth]{IExtBrl4}
-\includegraphics<3>[width=\textwidth]{InclBrl4}
+\includegraphics<1>[width=\textwidth]{ExtBrl4_2}
+\includegraphics<2>[width=\textwidth]{IExtBrl4_2}
+\includegraphics<3>[width=\textwidth]{InclBrl4_2}
 \end{frame}
 %-----------------------------------------
 \begin{frame}[t]
@@ -492,7 +493,7 @@ coordinate (zoomEdge) at (\x6, \y6 + \n{zoomheight}*0.75);
 		\small
 		{\color{dred} Particella di ``hard-scattering''} \\
 		\vskip0.2cm
-		{\color{cyan} Particelle di pile-up in RoI} \\
+		{\color{blue} Particelle di pile-up in RoI} \\
 		\vskip0.2cm
 		{\color{gray} Particelle di pile-up escluse} \\
 		\vskip0.2cm
@@ -554,8 +555,8 @@ Generazione di eventi con un singolo $\pi^{\pm}$ (``particle-gun'') con:
 {\setbeamercolor{local structure}{fg=dred}
 \begin{itemize}
 \item<1-> componente trasversa dell'impulso ($p_{T}$) fissata (da 5 a 100 GeV)
-\item<1-> distribuzione di $\eta$ piatta
-\item<1-> distribuzione di $\phi$ piatta
+\item<1-> distribuzione in $\eta$ piatta
+\item<1-> distribuzione in $\phi$ piatta
 \end{itemize}}
 \bigskip
 \bigskip
@@ -749,7 +750,7 @@ Higgs senza jet associati $\rightarrow$ pi\`u semplice per la tracciatura
 \begin{frame}[t]
 \frametitle{Metodo di simulazione veloce}
 \centering
-\includegraphics[width=.5\textwidth, height=6cm]{HiggsCones}
+\includegraphics[width=.6\textwidth, height=6cm]{cone_3}
 
 \begin{itemize}
 \item Regione di interesse (RoI) definita per ogni muone in $H \rightarrow 4\mu$
@@ -817,7 +818,7 @@ let \p1=(topbrace), \p2=(bottombrace) in
 \vskip-.5cm
 \begin{itemize}
 \item $\langle\mu\rangle$ = 200
-\item Eventi contenti 4 muoni + fotoni di final-state-radiation con $p_{T, max}^{\gamma} < 1.5$ GeV
+\item Eventi contenenti 4 muoni + fotoni di final-state-radiation con $p_{T, max}^{\gamma} < 1.5$ GeV
 \end{itemize}
 %[\color{red}\scalebox{0.9}{\ball}]
 %
@@ -890,7 +891,7 @@ Efficienza di ricostruzione
 \frametitle{Risoluzione in massa (InclBrl4)}
 \setbeamercolor{local structure}{fg=black}
 \begin{itemize}
-\item[\color{black}--] \small Si ipotizza 100\% di efficienza di ricostruzione dei muoni per semplicit\`a
+\item[\color{black}--] \small Si ipotizza 100\% di efficienza di identificazione dei muoni per semplicit\`a
 \item[\color{black}--] \small Selezione per identificare il segnale e minimizzare il fondo
 \end{itemize}
 
@@ -898,21 +899,27 @@ Efficienza di ricostruzione
 \begin{column}{0.09\textwidth}
 \end{column}
 \begin{column}{0.41\textwidth}
-\includegraphics[width=\textwidth]{HZZ4mu/sigRecoOnShellMass2}
+\includegraphics<1>[width=\textwidth]{HZZ4mu/sigRecoOnShellMass_3}
+\includegraphics<2>[width=\textwidth]{HZZ4mu/sigRecoOnShellMass_2}
+\includegraphics<3>[width=\textwidth]{HZZ4mu/sigRecoOnShellMass}
 \end{column}
 \begin{column}{0.41\textwidth}
-\includegraphics[width=\textwidth]{HZZ4mu/sigRecoOffShellMass2}
+\includegraphics<1>[width=\textwidth]{HZZ4mu/sigRecoOffShellMass_3}
+\includegraphics<2>[width=\textwidth]{HZZ4mu/sigRecoOffShellMass_2}
+\includegraphics<3>[width=\textwidth]{HZZ4mu/sigRecoOffShellMass}
 \end{column}
 \begin{column}{0.09\textwidth}
 \end{column}
 \end{columns}
-\vskip-0.1cm
+%\vskip-0.07cm
 
 \begin{columns}
 \begin{column}{0.09\textwidth}
 \end{column}
 \begin{column}{0.41\textwidth}
-\includegraphics[width=\textwidth]{HZZ4mu/sigRecoMass2}
+\includegraphics<1>[width=\textwidth]{HZZ4mu/sigRecoMass_3}
+\includegraphics<2>[width=\textwidth]{HZZ4mu/sigRecoMass_2}
+\includegraphics<3>[width=\textwidth]{HZZ4mu/sigRecoMass}
 \end{column}
 \begin{column}{0.41\textwidth}
 \begin{itemize}
@@ -935,7 +942,7 @@ di risoluzione in $p_{T}$ delle tracce
 
 \begin{itemize}
 \item \small Segnale e fondo definiti come il numero di eventi in una regione ampia
-\mbox{$\pm$ 1.5 $\times \sigma_{Higgs mass}$} attorno al picco
+\mbox{$\pm$ 1.5 $\times \sigma_{H}$} attorno al picco
 \item \small Significativit\`a = $\frac{S}{\sqrt{S + B}}$
 \item \small $\mu$ = $\frac{(\sigma \times BR)_{mis.}}{(\sigma \times BR)_{SM}}$ $\rightarrow 
 \Delta\mu/\mu \simeq \frac{\sqrt{S + B}}{S}$ (stat.)
@@ -960,12 +967,12 @@ di risoluzione in $p_{T}$ delle tracce
 \begin{frame}
 \frametitle{Conclusioni - 1}
 \begin{itemize}
-\item<1-> Abbiamo esteso una tecnica di simulazione veloce gi\`a esistente
-a campioni di fisica, testandone l'efficacia sullo studio delle prestazioni di ITk;
+\item<1-> Abbiamo sviluppato e applicato una tecnica di simulazione veloce
+su campioni di fisica, testandone l'efficacia sullo studio delle prestazioni di ITk;
 \item<2-> I layout proposti dalla collaborazione sono robusti rispetto al pile-up;
 \item<3-> Abbiamo misurato il canale $H \rightarrow ZZ^{*} \rightarrow 4\mu$ con
 un rapporto segnale/fondo di almeno 7 in tutte le regioni angolari e con un'incertezza
-su $\mu$ del 2.5\% (senza includere l'incertezza sulla luminosit\`a);
+su $\mu$ del 2.5\% (senza includere altre incertezze sistematiche);
 \item<4-> In generale, i layout ``inclined'' mostrano prestazioni migliori rispetto a quello
 ``extended'', ma quest'ultimo soffre della mancanza di un algoritmo di ricostruzione ottimizzato.
 \end{itemize}
@@ -979,8 +986,8 @@ Quindi:\\
 \setbeamercolor{local structure}{fg=dred} 
 \begin{itemize}
 \item<2-> A questo stadio preliminare \`e presto per trarre conclusioni sulla scelta del layout,
-ma questi studi sono utili per mostrare che il rivelatore rispetta approssimativamente 
-i requisiti imposti;
+ma questi studi sono utili per mostrare che tutti i progetti rispettano approssimativamente 
+i requisiti necessari;
 \item<3-> L'estensione della copertura angolare a 3.2 fornisce un buon aumento della statistica, mentre estendere ulteriormente a 4.0 non \`e particolarmente utile, limitatamente
 al canale fisico studiato.
 
@@ -1003,6 +1010,99 @@ al canale fisico studiato.
 \end{center}
 \end{frame}
 %-----------------------------------------
+%-----------------------------------------
+%-----------------------------------------
+%-----------------------------------------
+%-----------------------------------------
+%-----------------------------------------
+%-----------------------------------------
+\begin{frame}
+\frametitle{Inner Detector}
+\includegraphics[width=\textwidth]{innerdetector_sideways}
+\end{frame}
+
+\begin{frame}
+\frametitle{Pixel - Run 1}
+\includegraphics[width=\textwidth]{Pixel_run1}
+\end{frame}
+
+\begin{frame}
+\frametitle{Formazione di ``long cluster''}
+\includegraphics[width=\textwidth]{long_cluster}
+\end{frame}
+
+\begin{frame}
+\frametitle{Materiale}
+\begin{columns}
+\begin{column}{.5\textwidth}
+\includegraphics[width=\textwidth]{Ext_material}
+\end{column}
+\begin{column}{.5\textwidth}
+\includegraphics[width=\textwidth]{Incl_material}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Occupancy}
+\includegraphics[width=\textwidth]{occupancy}
+\end{frame}
+
+\begin{frame}[t]
+\frametitle{Stabilit\`a con $\Delta$R}
+\begin{columns}
+\begin{column}{.5\textwidth}
+\includegraphics[width=\textwidth]{fakeProbVsDR}
+\end{column}
+\begin{column}{.5\textwidth}
+\includegraphics[width=\textwidth, height=4cm]{fakeProbVsDR_tab}
+\end{column}
+\end{columns}
+\bigskip
+\bigskip
+\bigskip
+Leggero aumento in funzione dell'ampiezza della regione di interesse
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Tracce generate e ricostruite}
+\begin{columns}
+\begin{column}{.09\textwidth}
+\end{column}
+\begin{column}{.41\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Tracking/nRecoTracks}
+\end{column}
+\begin{column}{.41\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Tracking/nRecoTracks_pt}
+\end{column}
+\begin{column}{.09\textwidth}
+\end{column}
+\end{columns}
+
+\begin{columns}
+\begin{column}{.09\textwidth}
+\end{column}
+\begin{column}{.41\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Tracking/nPrimaryChargedTruth}
+\end{column}
+\begin{column}{.41\textwidth}
+\centering
+\includegraphics[width=\textwidth]{Tracking/nSecondaryChargedTruth1GeV_pt}
+\end{column}
+\begin{column}{.09\textwidth}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Fast vs full simulation}
+\includegraphics[width=\textwidth]{time}
+\end{frame}
 
 \begin{frame}[t]
 \frametitle{Selezione dell'analisi}
@@ -1065,70 +1165,31 @@ Picco {\color{dred} off-shell} a $\sim$ 90 GeV: componente ZZ del fondo
 \end{frame}
 
 %-----------------------------------------
-\begin{frame}
-\frametitle{Generazione dell'evento}
 
-Generazione di 45'000 eventi con un singolo $\pi^{\pm}$ (``particle-gun'') con:
-{\setbeamercolor{local structure}{fg=dred}
-\begin{itemize}
-\item<1-> componente trasversa dell'impulso ($p_{T}$) fissata: 5, 15, 50, 100 GeV
-\item<1-> distribuzione di $\eta$ piatta [-5, 5] (accettanza [-4, 4])
-\item<1-> distribuzione di $\phi$ piatta [-$\pi$, $\pi$]
-\end{itemize}}
-\bigskip
-\onslide<2->{
-Per ogni evento, sovrapposizione del pile-up:
-\begin{itemize}
-\item Generato con Pythia8
-\item $\mu$ = Poisson($\langle\mu\rangle$), $\langle\mu\rangle$ = 0, 50, 200
-\item Ogni particella di pile-up viene salvata nel file di output solo se 
-la sua distanza $\Delta$R dalla particella di hard-scattering \`e $<$ 0.1
-\end{itemize}}
-\bigskip
-\onslide<3->{
-\framebox{Layout simulati: ExtBrl4, IExtBrl4, InclBrl4}
-}
 
-\end{frame}
 %-----------------------------------------
-
-
-
 \begin{frame}
-\frametitle{Cose da aggiungere}
-\begin{itemize}
-\item slide con disegno sensore pixel e soprattutto strip, per far vedere che \`e doppia
-\item far vedere meccanismo di generazione long clusters vs doppio layer negli inclined
-\item tabella tempi fast vs full sim
-\item Limitazioni della fast sim
-\item studio stabilit\`a con $\Delta$R
-\item far vedere distribuzioni piatte in generazione evento PG?
-\item scrivere la storia dei long cluster?
-\item scrivere che simuliamo solo il tracciatore
-\item dire truth/reco
-\item chiedere se va bene mettere plot che non ci sono nella tesi
-\item digi e ricostruzione tracce
-\item matching?
-\item bias in backup
-\item risoluzione(pt)
-\end{itemize}
-\end{frame}
+\frametitle{Significativit\`a e incertezze }
 
-\begin{frame}
-\frametitle{Cose da aggiungere - 2}
+Definizione significativit\`a:\\
 \begin{itemize}
-\item esempio calcolo risoluzione da distribuzione
-\item risoluzione in funzione di pileup per mostrare che \`e stabile
-\item una delle due Z deve essere offshell
-\item distribuzione eta e pt pileup
-\item difficolt\`a dell'andare in avanti (campo magnetico, materiale, parametro di impatto rispetto all'asse)
-\item nRecotrk
-\item confronto pileup nell'Higgs
-\item eff muoni
-\item plot cross section e BR
-\item tabella deltaMu/mu atteso
-\item slide iniziale per inquadrare il lavoro
+\item[\color{black}-] Dati distanti n$\sigma$ dal fondo
+	\begin{itemize}
+	\item $(S + B) - n\sqrt{S + B} > B \rightarrow \frac{S}{\sqrt{S+B}} > n$
+	\end{itemize}		
 \end{itemize}
+
+\bigskip
+\bigskip
+
+Incertezza sul parametro $\mu$:
+\begin{itemize}
+\item $\mu = \frac{(\sigma \times BR)_{meas}}{\sigma \times BR)_{SM}}$
+\item $S = \sigma \times BR \times \int\mathcal{L}dt \times \epsilon$
+\item $\Delta S_{meas} = \Delta((S + B) - B) = \sqrt{S + B}$
+\item $\Delta\mu/\mu = \Delta S_{meas}/ S = \sqrt{S+B}/S$
+\end{itemize}
+
 \end{frame}
 
 %-----------------------------------------
@@ -1148,15 +1209,6 @@ $p_{T}$ dei fotoni\par
 \end{columns}
 \end{frame}
 %-----------------------------------------
-
-\begin{frame}
-\frametitle{Cose da chiedere}
-\begin{itemize}
-\item Nella slide del numero di hit, perché ExtBrl4 ne ha leggermente meno anche nel primo bin?
-\item efficienza che sale con pt
-\end{itemize}
-\end{frame}
-
 
 \begin{frame}[t]
 \frametitle{Metodo di simulazione veloce}
