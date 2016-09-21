@@ -639,14 +639,14 @@ Diverso approccio nella ricostruzione nella regione ad alto $\eta$
 
 %-----------------------------------------
 \begin{frame}
-\frametitle{Tracce mal ricostruite}
+\frametitle{Tracce ``mal ricostruite''}
 Definizione operativa basata sulla distribuzione di $\Delta R_{ricostruito - generato}$:
 \centering
 \includegraphics[width=.7\textwidth]{Tracking/pionMatchingDR2}
 
 \begin{itemize}
 \item [\color{black}--] Valore ``critico'' di $\Delta R$ dipende dal $p_{T}$
-\item[\color{black}--] \textbf{Frazione di tracce mal ricostruite = } (0.5 $\div$ 4) \%
+\item[\color{black}--] \textbf{Frazione di tracce ``mal ricostruite'' = } (0.5 $\div$ 4) \%
 \end{itemize}
 \end{frame}
 
@@ -1018,18 +1018,22 @@ al canale fisico studiato.
 %-----------------------------------------
 \begin{frame}
 \frametitle{Inner Detector}
-\includegraphics[width=\textwidth]{innerdetector_sideways}
+\centering
+\includegraphics[width=.7\textwidth]{innerdetector_sideways}
 \end{frame}
+%----------------------------------------------
 
 \begin{frame}
 \frametitle{Pixel - Run 1}
 \includegraphics[width=\textwidth]{Pixel_run1}
 \end{frame}
+%----------------------------------------------
 
 \begin{frame}
-\frametitle{Formazione di ``long cluster''}
+\frametitle{Formazione di ``long clusters''}
 \includegraphics[width=\textwidth]{long_cluster}
 \end{frame}
+%----------------------------------------------
 
 \begin{frame}
 \frametitle{Materiale}
@@ -1042,11 +1046,13 @@ al canale fisico studiato.
 \end{column}
 \end{columns}
 \end{frame}
+%----------------------------------------------
 
 \begin{frame}
 \frametitle{Occupancy}
 \includegraphics[width=\textwidth]{occupancy}
 \end{frame}
+%----------------------------------------------
 
 \begin{frame}[t]
 \frametitle{Stabilit\`a con $\Delta$R}
@@ -1063,6 +1069,7 @@ al canale fisico studiato.
 \bigskip
 Leggero aumento in funzione dell'ampiezza della regione di interesse
 \end{frame}
+%----------------------------------------------
 
 
 \begin{frame}
@@ -1097,40 +1104,198 @@ Leggero aumento in funzione dell'ampiezza della regione di interesse
 \end{column}
 \end{columns}
 \end{frame}
+%----------------------------------------------
 
+\begin{frame}[t]
+\frametitle{Metodo di simulazione veloce}
+\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT4}
+
+\end{frame}
+
+%----------------------------------------------
 
 \begin{frame}
 \frametitle{Fast vs full simulation}
 \includegraphics[width=\textwidth]{time}
 \end{frame}
 
-\begin{frame}[t]
-\frametitle{Selezione dell'analisi}
+%---------------TRACKING-------------------------------
 
-La selezione viene applicata sequenzialmente:
-\begin{itemize}
-\item<1-> l'evento deve contenere almeno 4 tracce;
-\item<2-> ogni traccia deve essere formata da almeno 10 cluster;
-\item<3-> ogni traccia deve avere $p_{T} >$ 6 GeV;
-\item<4-> la distanza tra lo $z_{0}$ della traccia e il vertice primario (truth) deve essere $< 5\sigma_{z}$;
-\end{itemize}
-\medskip
-\pause
-\pause
-\pause
-\pause
-\`E stato verificato che a questo punto tutti gli eventi hanno non pi\`u di 4 tracce $\rightarrow$ tagli topologici:
-\begin{itemize}
-\item<6-> le tracce devono essere isolate: $\sum_{\Delta R < 0.1} (p_{T}) / p_{T, candidate} <$ 1;
-\item<7-> ci devono essere due paia di tracce con carica opposta;
-\item<8-> Il $p_{T}$ ordinato delle tracce deve essere ($>$ 20, $>$ 15, $>$10, $>$ 6) GeV;
-\item<9-> almeno uno dei candidati off-shell
-deve avere $|\eta| <$ 2.7;
-\item<10-> la massa del paio on-shell deve stare nell'intervallo [50,106] GeV;
-\item<11-> la massa del paio off-shell deve stare nell'intervallo [12,115] GeV;
-\end{itemize}
+\begin{frame}
+\frametitle{Frazione di tracce ``mal ricostruite''}
+\includegraphics[width=.9\textwidth]{fake_tab}
+\end{frame}
+
+%----------------------------------------------
+\begin{frame}
+\frametitle{Frazione di tracce ``mal ricostruite'' vs $\eta$}
+\centering
+\includegraphics[width=.9\textwidth]{fakeProb_abseta}
+\end{frame}
+%----------------------------------------------
+
+\begin{frame}
+\frametitle{Efficienza di ricostruzione}
+\includegraphics[width=.9\textwidth]{eff_tab}
+\end{frame}
+
+%----------------------------------------------
+\begin{frame}
+\frametitle{Efficienza di ricostruzione - LoI}
+\begin{columns}
+\begin{column}{.5\textwidth}
+\includegraphics[width=\textwidth]{eff_loi}
+\end{column}
+\begin{column}{.5\textwidth}
+\includegraphics[width=\textwidth]{eff_abseta_pt}
+\end{column}
+\end{columns}
 
 \end{frame}
+
+%----------------------------------------------
+\begin{frame}
+\frametitle{Interazioni nucleari - Stima qualitativa}
+\includegraphics[width=.7\textwidth]{silicio}
+\begin{itemize}
+\item Materiale al centro: 0.3 $X_{0}$
+\item Scalando alla lunghezza di collisione: $e^{-0.07} = 93\%$
+\end{itemize}
+\end{frame}
+
+%----------------------------------------------
+
+
+\begin{frame}
+\frametitle{Interazioni nucleari}
+\centering
+Mappa delle interazioni nucleari (dati ATLAS)
+\includegraphics[width=.8\textwidth]{Tracking/radiografia}
+
+\end{frame}
+
+%----------------------------------------------
+
+\begin{frame}
+\frametitle{Interazioni nucleari - simulazione}
+Pione - $p_{T} = 5$ GeV
+\bigskip
+\centering
+\begin{columns}
+\begin{column}{.5\textwidth}
+\includegraphics[width=\textwidth]{Tracking/pi5pu0_truthDeltaRAfterInteraction}
+\end{column}
+\begin{column}{.5\textwidth}
+\includegraphics[width=\textwidth]{Tracking/pi5pu0_truthDeltaPtAfterInteraction}
+\end{column}
+\end{columns}
+\end{frame}
+
+%----------------------------------------------
+
+\begin{frame}
+\frametitle{Interazioni nucleari - simulazione}
+Pione - $p_{T} = 50$ GeV
+\bigskip
+\centering
+\begin{columns}
+\begin{column}{.5\textwidth}
+\includegraphics[width=\textwidth]{Tracking/pi50pu0_truthDeltaRAfterInteraction}
+\end{column}
+\begin{column}{.5\textwidth}
+\includegraphics[width=\textwidth]{Tracking/pi50pu0_truthDeltaPtAfterInteraction}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+%----------------------------------------------
+\begin{frame}
+\frametitle{$\Delta R_{reco-gen}$}
+
+\begin{columns}
+\begin{column}{.5\textwidth}
+\centering
+\includegraphics<1>[width=\textwidth, height=4.5cm]{Tracking/pi15pu0_matchingDR}
+\includegraphics<2>[width=\textwidth, height=4.5cm]{Tracking/pi50pu0_matchingDR}
+
+\end{column}
+\begin{column}{.5\textwidth}
+\centering
+\includegraphics<1>[width=\textwidth, height=4.5cm]{Tracking/mu15pu0_matchingDR}
+\includegraphics<2>[width=\textwidth, height=4.5cm]{Tracking/mu50pu0_matchingDR}
+\end{column}
+\end{columns}
+\end{frame}
+
+
+%----------------------------------------------
+
+\begin{frame}
+\frametitle{Numero di tracce ``mal ricostruite'' - soglia fissa}
+\centering
+\begin{tabular}{ c | c | c }
+\boldmath$p_{T}$ (GeV) & \textbf{Soglia} & \textbf{Frazione} \\ \hline \hline 
+5 & 0.04 & (0.35 $\pm$ 0.03)\% \\ \hline
+15 & 0.04 & (0.72 $\pm$ 0.05)\% \\ \hline
+50 & 0.04 & (0.66 $\pm$ 0.05)\% \\ \hline
+100 & 0.04 & (0.70 $\pm$ 0.05)\% \\ \hline
+\end{tabular}
+\end{frame}
+
+%----------------------------------------------
+
+
+\begin{frame}
+\frametitle{Bias in $d_{0}$}
+\centering
+\includegraphics[width=.9\textwidth]{Tracking/pull_d0}
+\end{frame}
+
+%----------------------------------------------
+\begin{frame}
+\frametitle{Confronto con Step 1.5}
+\begin{columns}
+\begin{column}{.5\textwidth}
+\centering
+Step 1
+\includegraphics<1>[width=\textwidth,height=5cm]{Tracking/InclBrl4/pipu200_sigQPt_abseta}
+\includegraphics<2>[width=\textwidth,height=5cm]{Tracking/InclBrl4/pipu200_sigD0_abseta}
+\includegraphics<3>[width=\textwidth,height=5cm]{Tracking/InclBrl4/pipu200_sigZ0_abseta}
+\includegraphics<4>[width=\textwidth,height=5cm]{Tracking/InclBrl4/pipu200_sigZ0_abseta_zoom}
+\end{column}
+\begin{column}{.5\textwidth}
+\centering
+Step 1.5
+\includegraphics<1>[width=\textwidth, height=5cm]{nick_sigQpt_abseta}
+\includegraphics<2>[width=\textwidth, height=5cm]{nick_sigD0_abseta}
+\includegraphics<3->[width=\textwidth, height=5cm]{nick_sigZ0_abseta}
+\end{column}
+\end{columns}
+\end{frame}
+
+%----------------------------------------------
+\begin{frame}
+\frametitle{Requisiti del tracciatore}
+\centering
+\includegraphics[width=.9\textwidth]{Tracking/requirements}
+ \end{frame}
+
+%---------------HIGGS-------------------------------
+\begin{frame}
+\frametitle{Higgs - $\sigma$ e BR}
+\includegraphics[width=\textwidth]{Higgs_cs_br}
+\end{frame}
+
+%----------------------------------------------
+\begin{frame}
+\frametitle{Higgs - Precisioni attese}
+\centering
+\includegraphics[width=.9\textwidth]{Higgs_measure}
+\end{frame}
+
+%----------------------------------------------
+
 
 %----------------------------------------------
 
@@ -1164,10 +1329,180 @@ Picco {\color{dred} off-shell} a $\sim$ 90 GeV: componente ZZ del fondo
 
 \end{frame}
 
-%-----------------------------------------
+%----------------------------------------------
+\begin{frame}
+\frametitle{Massa ZZ Generata}
+\centering
+Massa invariante di $4\mu$ (fondo)
+\includegraphics[width=.9\textwidth]{ZZ4mu/gen4muMass4}
+\end{frame}
+
+%----------------------------------------------
 
 
-%-----------------------------------------
+\begin{frame}[t]
+\frametitle{Selezione dell'analisi}
+
+La selezione viene applicata sequenzialmente:
+\begin{itemize}
+\item l'evento deve contenere almeno 4 tracce;
+\item ogni traccia deve essere formata da almeno 10 cluster;
+\item ogni traccia deve avere $p_{T} >$ 6 GeV;
+\item la distanza tra lo $z_{0}$ della traccia e il vertice primario (truth) deve essere $< 5\sigma_{z}$;
+\end{itemize}
+\medskip
+\`E stato verificato che a questo punto tutti gli eventi hanno non pi\`u di 4 tracce $\rightarrow$ tagli topologici:
+\begin{itemize}
+\item le tracce devono essere isolate: $\sum_{\Delta R < 0.1} (p_{T}) / p_{T, candidate} <$ 1;
+\item ci devono essere due paia di tracce con carica opposta;
+\item Il $p_{T}$ ordinato delle tracce deve essere ($>$ 20, $>$ 15, $>$10, $>$ 6) GeV;
+\item almeno uno dei candidati off-shell
+deve avere $|\eta| <$ 2.7;
+\item la massa del paio on-shell deve stare nell'intervallo [50,106] GeV;
+\item la massa del paio off-shell deve stare nell'intervallo [12,115] GeV;
+\end{itemize}
+
+\end{frame}
+
+%----------------------------------------------
+
+\begin{frame}
+\frametitle{Higgs - efficienza di selezione}
+\centering
+\includegraphics[width=0.9\textwidth]{HZZ4mu/eff_tab}
+\end{frame}
+
+%----------------------------------------------
+
+\begin{frame}[t]
+\frametitle{Confronto con Scoping: on-shell}
+
+\begin{columns}
+\begin{column}{.5\textwidth}
+\centering
+\vskip1.2cm
+Scoping Document
+\includegraphics<1>[width=\textwidth,height=4.5cm]{scopingSigOnShell27}
+\includegraphics<2>[width=\textwidth,height=4.5cm]{scopingSigOnShell32}
+\includegraphics<3>[width=\textwidth,height=4.5cm]{scopingSigOnShell4}
+\end{column}
+\begin{column}{.5\textwidth}
+\centering
+\vskip0.6cm
+Our analysis \\(InclBrl4 layout, no mass constraint)
+\vskip0.1cm
+\includegraphics<1>[width=\textwidth]{HZZ4mu/recoOnShellMass27}
+\includegraphics<2>[width=\textwidth]{HZZ4mu/recoOnShellMass32}
+\includegraphics<3>[width=\textwidth]{HZZ4mu/recoOnShellMass4}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+%----------------------------------------------
+
+
+\begin{frame}[t]
+\frametitle{Confronto con Scoping: $4\mu$ }
+
+\begin{columns}
+\begin{column}{.5\textwidth}
+\centering
+\vskip1.2cm
+Scoping Document
+\includegraphics[width=\textwidth]{scopingRecoMass}
+\end{column}
+\begin{column}{.5\textwidth}
+\centering
+\vskip0.8cm
+Nostra analisi \\(InclBrl4 layout, no Z mass constraint)
+\includegraphics[width=\textwidth]{HZZ4mu/recoMass}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+%----------------------------------------------
+
+\begin{frame}
+\frametitle{Risoluzioni del sistema 4$\mu$ (InclBrl4 layout)}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,height=3.7cm]{HZZ4mu/sigRecoPt}
+\end{column}
+\begin{column}{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,height=3.7cm]{HZZ4mu/sigRecoEta}
+\end{column}
+\end{columns}
+\vskip-0.5cm
+\begin{center}
+\centering
+\includegraphics[width=0.5\textwidth,height=3.7cm]{HZZ4mu/sigRecoPhi}
+\end{center}
+
+\end{frame}
+
+
+%----------------------------------------------
+
+\begin{frame}
+\frametitle{Risoluzioni delle tracce dei muoni}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,height=3.7cm]{sigPt}
+\end{column}
+\begin{column}{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth,height=3.7cm]{sigEta}
+\end{column}
+\end{columns}
+\vskip-0.5cm
+\begin{center}
+\centering
+\includegraphics[width=0.5\textwidth,height=3.7cm]{sigPhi}
+\end{center}
+
+\end{frame}
+
+%----------------------------------------------
+
+\begin{frame}
+\frametitle{Confronto con Scoping: Risoluzioni in massa}
+\centering
+
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] at (0,0) {\includegraphics[width=\textwidth]{HZZ4mu/massResolutions}};
+    \draw<2->[red,thick] (0.1,2.31) rectangle (12,2.67);
+    \draw<2->[red,thick] (0.1,1.17) rectangle (12,1.57);
+    \draw<2->[red,thick] (0.1,0.05) rectangle (12,0.42);
+\end{tikzpicture}
+
+\onslide<2->{
+\begin{columns}
+\begin{column}{.7\textwidth}
+\includegraphics[width=\textwidth]{scopingResolution}
+\end{column}
+\begin{column}{.3\textwidth}
+\textbf{Scoping Document}: \\
+Better resolutions but Z mass constraint
+\end{column}
+\end{columns}}
+
+\end{frame}
+
+%----------------------------------------------
+
+\begin{frame}
+\frametitle{Risoluzioni in $p_T$, $\eta$, $\phi$ - risultati}
+\centering
+\includegraphics[width=\textwidth]{HZZ4mu/ptResolutions}
+\end{frame}
+
+%----------------------------------------------
+
 \begin{frame}
 \frametitle{Significativit\`a e incertezze }
 
@@ -1192,32 +1527,47 @@ Incertezza sul parametro $\mu$:
 
 \end{frame}
 
-%-----------------------------------------
+%----------------------------------------------
+
+
 \begin{frame}
-\frametitle{Truth mass + pt selection}
-\begin{columns}
-\begin{column}{.5\textwidth}
+\frametitle{Significativit\`a - risultati}
 \centering
-Massa invariante di $4\mu$ (fondo)
-\includegraphics[width=\textwidth]{ZZ4mu/gen4muMass4}
-\end{column}
-\begin{column}{.5\textwidth}
-\centering
-$p_{T}$ dei fotoni\par
-\includegraphics[width=\textwidth]{HZZ4mu/photonPt4}
-\end{column}
-\end{columns}
+\includegraphics[width=.9\textwidth, height=7.5cm]{significance}
 \end{frame}
+
+%----------------------------------------------
+\begin{frame}[t]
+\frametitle{Confronto con Scoping: significativit\`a}
+
+\includegraphics[width=.8\textwidth]{significanceInclBrl4}
+
+\bigskip
+
+\includegraphics[width=.6\textwidth]{scopingSignificance}
+
+Differenze:\\
+\begin{itemize}
+\item Scoping \`e inclusivo, il nostro solo ggF (fattore 1.16 in $\sigma$)
+\item Scoping \`e a 14 TeV, il nostro a 13 TeV (factor 1.13 in $\sigma$)
+\item Selezione dei fotoni di final-state (fattore 1.25)
+\item Nello Scoping: Z mass constraint 
+\end{itemize}
+\end{frame}
+
+
+
+
+%----------------------------------------------
+
+
+
 %-----------------------------------------
 
-\begin{frame}[t]
-\frametitle{Metodo di simulazione veloce}
 
-\only<1>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT}}
-\only<2>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT2}}
-\only<3>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT3}}
-\only<4>{\includegraphics[width=\textwidth]{PhysicsGenerationFlowIT4}}
+%-----------------------------------------
 
-\end{frame}
+
+
 
 \end{document}
