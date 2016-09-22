@@ -102,13 +102,18 @@ Federico Massa
 \vskip0.5cm
 \item {Upgrade del rivelatore interno}
 \vskip0.5cm
+\end{itemize}
+{%
+\setbeamercolor{local structure}{fg=blue}
+\begin{itemize}[<+->]
 \item {Tecnica di simulazione veloce}
 \vskip0.5cm
 \item {Studio di singola particella}
 \vskip0.5cm
 \item {Misura del canale $H\rightarrow 4\mu$}
 \vskip0.5cm
-\end{itemize}
+\end{itemize}%
+}
 
 \end{frame}
 
@@ -149,13 +154,14 @@ Le collisioni possono essere:
 \item \textbf{elastiche}: i protoni rimangono intatti
 \item \textbf{anelastiche}: lo stato finale è diverso da quello iniziale
 	\setbeamercolor{local structure}{fg=red}
+	\onslide<2->{
 	\begin{itemize}
 	\item \textbf{di ``hard-scattering''}: la collisione avviene direttamente tra partoni con produzione di uno stato finale raro
-	\end{itemize}
+	\end{itemize}}
 \end{itemize}
 
 \centering
-\includegraphics[width=.5\textwidth]{collision1}
+\includegraphics<2->[width=.5\textwidth]{collision1}
 
 
 \end{frame}
@@ -261,7 +267,7 @@ LHC prevede una serie di upgrade per aumentare la luminosit\`a istantanea \\
 Aumento del numero di interazioni per unit\`a di tempo (N $\propto \sigma \times \mathcal{L}$):\\
 \begin{itemize}
 \item Possibilit\`a di osservare canali pi\`u rari
-\item Miglioramento delle misure sugli accoppiamenti e le sezioni d'urto
+\item Miglioramento delle misure sugli accoppiamenti
 \item Miglioramento dei limiti o scoperta di nuova fisica
 \end{itemize}}
 
@@ -331,9 +337,9 @@ rappresentano il cosiddetto \textbf{in-time pile-up}, mediamente $\langle\mu\ran
 L'attuale rivelatore interno \`e inadatto alla fase di alta luminosit\`a:
 \pause
 \begin{itemize}
-\item<+-> I rivelatori a pixel e SCT non sono disegnati per sopportare l'alto
+\item<+-> I rivelatori a pixel e SCT non sono progettati per sopportare l'alto
 flusso di radiazione di HL-LHC
-\item<+-> L'elettronica di read-out \`e disegnata per un numero massimo di eventi
+\item<+-> L'elettronica di read-out \`e progettata per un numero massimo di eventi
 		di pile-up di 50 $\rightarrow$ inefficienze ad HL-LHC
 \item<+-> La risoluzione spaziale dell'SCT non permette di risolvere tracce
 		in ambienti altamente densi di particelle
@@ -364,7 +370,8 @@ flusso di radiazione di HL-LHC
 	\ \ \ \
 \end{column}
 \begin{column}{0.5\textwidth}
-\includegraphics[width=\textwidth,height=3.8cm]{ExtBrl4_2}
+\includegraphics<1>[width=\textwidth,height=3.8cm]{ExtBrl4_2}
+\includegraphics<2->[width=\textwidth,height=3.8cm]{ExtBrl4_3}
 \end{column}
 \end{columns}
 
@@ -383,14 +390,15 @@ flusso di radiazione di HL-LHC
 \begin{frame}
 \frametitle{Layout di ITk: Step-1}
 \includegraphics<1>[width=\textwidth]{ExtBrl4_2}
-\includegraphics<2>[width=\textwidth]{IExtBrl4_2}
-\includegraphics<3>[width=\textwidth]{InclBrl4_2}
+\includegraphics<2>[width=\textwidth]{ExtBrl4_3}
+\includegraphics<3>[width=\textwidth]{IExtBrl4_3}
+\includegraphics<4>[width=\textwidth]{InclBrl4_3}
 \end{frame}
 %-----------------------------------------
 \begin{frame}[t]
-\frametitle{Inclined sensors}
+\frametitle{Sensori inclinati}
 \begin{center}
-InclBrl4: Pixel Layout
+Fully Inclined (InclBrl4): Pixel Layout
 \begin{tikzpicture}
 
 \onslide<1->{
@@ -527,7 +535,7 @@ In questo studio:\\
 \begin{itemize}
 \item<2-> Misura delle prestazioni
 di tracciatura del rivelatore in condizioni controllate;
-\item<3-> Verificare che il rivelatore rispetti i requisiti imposti dalla collaborazione nelle
+\item<3-> Verificare che il rivelatore rispetti i requisiti necessari per le misure di fisica, nelle
 condizioni di pile-up di HL-LHC;
 \end{itemize}
 
@@ -551,7 +559,7 @@ condizioni di pile-up di HL-LHC;
 \begin{frame}
 \frametitle{Generazione dell'evento}
 
-Generazione di eventi con un singolo $\pi^{\pm}$ (``particle-gun'') con:
+Generazione di eventi con un singolo $\pi^{\pm}$ con:
 {\setbeamercolor{local structure}{fg=dred}
 \begin{itemize}
 \item<1-> componente trasversa dell'impulso ($p_{T}$) fissata (da 5 a 100 GeV)
@@ -972,7 +980,7 @@ su campioni di fisica, testandone l'efficacia sullo studio delle prestazioni di 
 \item<2-> I layout proposti dalla collaborazione sono robusti rispetto al pile-up;
 \item<3-> Abbiamo misurato il canale $H \rightarrow ZZ^{*} \rightarrow 4\mu$ con
 un rapporto segnale/fondo di almeno 7 in tutte le regioni angolari e con un'incertezza
-su $\mu$ del 2.5\% (senza includere altre incertezze sistematiche);
+su $\mu$ (misura dell'accoppiamento) del 2.5\% (senza includere altre incertezze sistematiche);
 \item<4-> In generale, i layout ``inclined'' mostrano prestazioni migliori rispetto a quello
 ``extended'', ma quest'ultimo soffre della mancanza di un algoritmo di ricostruzione ottimizzato.
 \end{itemize}
