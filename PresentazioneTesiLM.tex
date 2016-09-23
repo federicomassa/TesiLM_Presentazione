@@ -152,7 +152,7 @@ i processi hard, in cui i quark interagiscono direttamente per dare luogo a inte
 Le collisioni possono essere:
 \begin{itemize}
 \item \textbf{elastiche}: i protoni rimangono intatti
-\item \textbf{anelastiche}: lo stato finale è diverso da quello iniziale
+\item \textbf{anelastiche}: almeno uno dei due protoni viene frammentato
 	\setbeamercolor{local structure}{fg=red}
 	\onslide<2->{
 	\begin{itemize}
@@ -572,7 +572,7 @@ Generazione di eventi con un singolo $\pi^{\pm}$ con:
 Per ogni evento, sovrapposizione del pile-up:
 \begin{itemize}
 \item $\mu$ = Poisson($\langle\mu\rangle$), $\langle\mu\rangle$ = 0, 50, 200
-\item Ogni particella di pile-up viene salvata nel file di output solo se 
+\item Ogni particella di pile-up viene simulata solo se 
 la sua distanza $\Delta$R dalla particella di hard-scattering \`e $<$ 0.1
 \end{itemize}}
 
@@ -593,10 +593,10 @@ di cluster} utilizzati nella ricostruzione della traccia
 \begin{column}{0.09\textwidth}
 \end{column}
 \begin{column}{0.41\textwidth}
-\includegraphics[width=\textwidth]{Tracking/nPixHits_abseta2}
+\includegraphics[width=\textwidth]{Tracking/nPixHits_abseta3}
 \end{column}
 \begin{column}{0.41\textwidth}
-\includegraphics[width=\textwidth]{Tracking/nSCTHits_abseta2}
+\includegraphics[width=\textwidth]{Tracking/nSCTHits_abseta3}
 \end{column}
 \begin{column}{0.09\textwidth}
 \end{column}
@@ -607,7 +607,7 @@ di cluster} utilizzati nella ricostruzione della traccia
 \begin{column}{0.09\textwidth}
 \end{column}
 \begin{column}{0.41\textwidth}
-\includegraphics[width=\textwidth]{Tracking/nSiHits_abseta2}
+\includegraphics[width=\textwidth]{Tracking/nSiHits_abseta3}
 \end{column}
 \begin{column}{0.41\textwidth}
 \begin{itemize}
@@ -628,7 +628,7 @@ Diverso approccio nella ricostruzione nella regione ad alto $\eta$
 \begin{itemize}
 \item[\color{black}--] Parametri di traccia: \textbf{\color{dred}q/\boldmath$p_{T}$}, {\color{dred}\boldmath$\eta$}, {\color{dred}\boldmath$\phi$} (angolo azimuthale), {\color{dred}\boldmath$d_{0}$}
 (parametro di impatto trasversale), {\color{dred}\boldmath$z_{0}$} (parametro di impatto longitudinale)
-\item[\color{black}--] Per ogni parametro, fit gaussiano della distribuzione di $x_{traccia} - x_{truth}$ in diversi intervalli di $\eta$
+\item[\color{black}--] Per ogni parametro, fit gaussiano della distribuzione di $x_{ricostruito} - x_{generato}$ in diversi intervalli di $\eta$
 	\begin{itemize}
 	\item \textbf{Risoluzione:} $\sigma$ estratta dal fit
 	%\item \textbf{Bias:} media estratta dal fit
@@ -650,11 +650,12 @@ Diverso approccio nella ricostruzione nella regione ad alto $\eta$
 \frametitle{Tracce ``mal ricostruite''}
 Definizione operativa basata sulla distribuzione di $\Delta R_{ricostruito - generato}$:
 \centering
-\includegraphics[width=.7\textwidth]{Tracking/pionMatchingDR2}
+\includegraphics[width=.65\textwidth]{Tracking/pionMatchingDR3}
 
 \begin{itemize}
 \item [\color{black}--] Valore ``critico'' di $\Delta R$ dipende dal $p_{T}$
 \item[\color{black}--] \textbf{Frazione di tracce ``mal ricostruite'' = } (0.5 $\div$ 4) \%
+\item[\color{black}--] Piccolo effetto osservato all'aumentare del pile-up
 \end{itemize}
 \end{frame}
 
@@ -693,7 +694,7 @@ particella e condizioni di pile-up realistiche:
 all'aumentare del pile-up
 \item I layout ''inclined'' si comportano mediamente meglio, ma quello 
 ''extended'' deve essere ottimizzato
-\item Risoluzioni ed efficienze rispettano i requisiti desiderati
+\item Le risoluzioni rispettano i requisiti desiderati
 \end{itemize}
 
 \end{frame}
@@ -762,7 +763,7 @@ Higgs senza jet associati $\rightarrow$ pi\`u semplice per la tracciatura
 
 \begin{itemize}
 \item Regione di interesse (RoI) definita per ogni muone in $H \rightarrow 4\mu$
-\item Stesso campione generato di $H \rightarrow 4\mu$ per i confronti tra layout
+\item Stesso campione generato di $H \rightarrow 4\mu$ per i confronti
 \end{itemize}
 
 \end{frame}
@@ -899,7 +900,7 @@ Efficienza di ricostruzione
 \frametitle{Risoluzione in massa (InclBrl4)}
 \setbeamercolor{local structure}{fg=black}
 \begin{itemize}
-\item[\color{black}--] \small Si ipotizza 100\% di efficienza di identificazione dei muoni per semplicit\`a
+\item[\color{black}--] \small Si ipotizza 100\% di efficienza di identificazione dei muoni
 \item[\color{black}--] \small Selezione per identificare il segnale e minimizzare il fondo
 \end{itemize}
 
@@ -949,7 +950,7 @@ di risoluzione in $p_{T}$ delle tracce
 \end{center}
 
 \begin{itemize}
-\item \small Segnale e fondo definiti come il numero di eventi in una regione ampia
+\item \small Segnale (S) e fondo (B) definiti come il numero di eventi in una regione ampia
 \mbox{$\pm$ 1.5 $\times \sigma_{H}$} attorno al picco
 \item \small Significativit\`a = $\frac{S}{\sqrt{S + B}}$
 \item \small $\mu$ = $\frac{(\sigma \times BR)_{mis.}}{(\sigma \times BR)_{SM}}$ $\rightarrow 
@@ -977,12 +978,13 @@ di risoluzione in $p_{T}$ delle tracce
 \begin{itemize}
 \item<1-> Abbiamo sviluppato e applicato una tecnica di simulazione veloce
 su campioni di fisica, testandone l'efficacia sullo studio delle prestazioni di ITk;
-\item<2-> I layout proposti dalla collaborazione sono robusti rispetto al pile-up;
-\item<3-> Abbiamo misurato il canale $H \rightarrow ZZ^{*} \rightarrow 4\mu$ con
+\item<2-> I layout considerati sono robusti rispetto al pile-up;
+\item<3-> In generale, i layout ``inclined'' mostrano prestazioni migliori rispetto a quello
+``extended'', ma quest'ultimo soffre della mancanza di un algoritmo di ricostruzione ottimizzato.
+\item<4-> Abbiamo misurato il canale $H \rightarrow ZZ^{*} \rightarrow 4\mu$ con
 un rapporto segnale/fondo di almeno 7 in tutte le regioni angolari e con un'incertezza
 su $\mu$ (misura dell'accoppiamento) del 2.5\% (senza includere altre incertezze sistematiche);
-\item<4-> In generale, i layout ``inclined'' mostrano prestazioni migliori rispetto a quello
-``extended'', ma quest'ultimo soffre della mancanza di un algoritmo di ricostruzione ottimizzato.
+
 \end{itemize}
 \end{frame}
 
@@ -1027,7 +1029,7 @@ al canale fisico studiato.
 \begin{frame}
 \frametitle{Inner Detector}
 \centering
-\includegraphics[width=.7\textwidth]{innerdetector_sideways_2}
+\includegraphics[width=.9\textwidth]{innerdetector_sideways_2}
 \end{frame}
 %----------------------------------------------
 
